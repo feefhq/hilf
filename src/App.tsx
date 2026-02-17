@@ -19,6 +19,7 @@ function getCardsForDeck(deckId: string): Card[] {
 
 interface StrengthCounts {
   new: number;
+  weak: number;
   learning: number;
   strong: number;
 }
@@ -28,19 +29,22 @@ function getStrengthCounts(
   states: Record<string, { repetitions: number; interval: number }>
 ): StrengthCounts {
   let newCount = 0;
+  let weakCount = 0;
   let learningCount = 0;
   let strongCount = 0;
   for (const card of cards) {
     const state = states[card.id];
-    if (!state || state.repetitions === 0) {
+    if (!state) {
       newCount += 1;
+    } else if (state.repetitions === 0) {
+      weakCount += 1;
     } else if (state.interval <= STRONG_INTERVAL_DAYS) {
       learningCount += 1;
     } else {
       strongCount += 1;
     }
   }
-  return { new: newCount, learning: learningCount, strong: strongCount };
+  return { new: newCount, weak: weakCount, learning: learningCount, strong: strongCount };
 }
 
 export default function App() {
@@ -152,7 +156,7 @@ export default function App() {
         </div>
         <footer className="py-3 text-center">
           <p className="text-xs text-neutral-400 dark:text-neutral-500">
-            New {strengthCounts.new} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
+            New {strengthCounts.new} · Weak {strengthCounts.weak} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
           </p>
         </footer>
       </div>
@@ -195,7 +199,7 @@ export default function App() {
       </main>
       <footer className="py-3 text-center">
         <p className="text-xs text-neutral-400 dark:text-neutral-500">
-          New {strengthCounts.new} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
+          New {strengthCounts.new} · Weak {strengthCounts.weak} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
         </p>
       </footer>
     </div>
