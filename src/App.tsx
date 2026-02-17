@@ -10,9 +10,37 @@ import { applySm2, type Quality } from './lib/srs';
 import type { Card } from './vocabulary/types';
 
 const SESSION_LIMIT = 20;
+/** Interval in days above which a card is considered "strong". */
+const STRONG_INTERVAL_DAYS = 21;
 
 function getCardsForDeck(deckId: string): Card[] {
   return a1Cards[deckId] ?? [];
+}
+
+interface StrengthCounts {
+  new: number;
+  learning: number;
+  strong: number;
+}
+
+function getStrengthCounts(
+  cards: Card[],
+  states: Record<string, { repetitions: number; interval: number }>
+): StrengthCounts {
+  let newCount = 0;
+  let learningCount = 0;
+  let strongCount = 0;
+  for (const card of cards) {
+    const state = states[card.id];
+    if (!state || state.repetitions === 0) {
+      newCount += 1;
+    } else if (state.interval <= STRONG_INTERVAL_DAYS) {
+      learningCount += 1;
+    } else {
+      strongCount += 1;
+    }
+  }
+  return { new: newCount, learning: learningCount, strong: strongCount };
 }
 
 export default function App() {
@@ -21,6 +49,11 @@ export default function App() {
   const { states, updateState, getState } = useCardStates();
 
   const cards = useMemo(() => getCardsForDeck(deckId), [deckId]);
+
+  const strengthCounts = useMemo(
+    () => getStrengthCounts(cards, states),
+    [cards, states]
+  );
 
   const statesMap = useMemo(() => {
     const m = new Map<string, { cardId: string; repetitions: number; easeFactor: number; interval: number; nextReview: number }>();
@@ -102,19 +135,26 @@ export default function App() {
 
   if (!currentCard) {
     return (
-      <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center p-4 gap-6">
-        <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200">
-          All done for now
-        </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-center">
-          No more cards due today. Come back later for your next review.
-        </p>
-        <button
-          onClick={handleStartAgain}
-          className="px-6 py-3 rounded-xl bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 font-medium hover:opacity-90"
-        >
-          Start again
-        </button>
+      <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col">
+        <div className="flex-1 flex flex-col items-center justify-center p-4 gap-6">
+          <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200">
+            All done for now
+          </h2>
+          <p className="text-neutral-600 dark:text-neutral-400 text-center">
+            No more cards due today. Come back later for your next review.
+          </p>
+          <button
+            onClick={handleStartAgain}
+            className="px-6 py-3 rounded-xl bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 font-medium hover:opacity-90"
+          >
+            Start again
+          </button>
+        </div>
+        <footer className="py-3 text-center">
+          <p className="text-xs text-neutral-400 dark:text-neutral-500">
+            New {strengthCounts.new} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
+          </p>
+        </footer>
       </div>
     );
   }
@@ -153,6 +193,11 @@ export default function App() {
           </div>
         </div>
       </main>
+      <footer className="py-3 text-center">
+        <p className="text-xs text-neutral-400 dark:text-neutral-500">
+          New {strengthCounts.new} · Learning {strengthCounts.learning} · Strong {strengthCounts.strong}
+        </p>
+      </footer>
     </div>
   );
 }
