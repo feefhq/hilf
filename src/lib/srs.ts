@@ -19,7 +19,10 @@ export function applySm2(
     quality
   );
   const now = Date.now();
-  const nextReview = now + result.interval * MS_PER_DAY;
+  let nextReview = now + result.interval * MS_PER_DAY;
+  if (quality === 2) {
+    nextReview = Math.max(nextReview, now + MS_PER_DAY);
+  }
   return {
     repetitions: result.repetition,
     easeFactor: result.efactor,
