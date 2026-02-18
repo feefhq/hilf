@@ -48,28 +48,32 @@ export function CardView({ card, revealed, onReveal }: CardViewProps) {
 
   return (
     <div className="rounded-xl bg-white dark:bg-neutral-800 shadow-lg p-8 min-h-[20rem] flex flex-col justify-center items-center">
-      <CardContent primary={promptPrimary} example={promptExample} />
-      <div className="mt-8 w-full min-h-[6rem] flex flex-col items-center justify-center">
-        {!revealed && (
+      {revealed ? (
+        <div className="w-full flex flex-col">
+          <div className="py-6 text-center">
+            <CardContent primary={promptPrimary} example={promptExample} />
+          </div>
+          <div className="w-full border-t border-neutral-200 dark:border-neutral-600" />
+          <div className="py-6 text-center">
+            <CardContent primary={answerPrimary} example={answerExample} />
+          </div>
+        </div>
+      ) : (
+        <div className="w-full flex flex-col items-center">
+          <div className="py-6">
+            <CardContent primary={promptPrimary} example={promptExample} />
+          </div>
           <button
             onClick={onReveal}
-            className="px-5 py-2.5 rounded-lg bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-500 text-neutral-800 dark:text-neutral-200 font-medium transition-colors inline-flex items-center gap-2"
+            className="mt-4 px-5 py-2.5 rounded-lg bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-500 text-neutral-800 dark:text-neutral-200 font-medium transition-colors inline-flex items-center gap-2"
           >
             Reveal translation
             <kbd className="ml-1.5 px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-200/80 dark:bg-neutral-600/50 border border-neutral-300/80 dark:border-neutral-500/50 text-neutral-500 dark:text-neutral-400">
               ⌴
             </kbd>
           </button>
-        )}
-        {revealed && (
-          <div className="w-full text-center pt-4 border-t border-neutral-200 dark:border-neutral-600">
-            <CardContent
-              primary={answerPrimary}
-              example={answerExample}
-            />
-          </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
