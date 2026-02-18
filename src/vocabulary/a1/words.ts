@@ -948,9 +948,9 @@ export const a1Words: Card[] = [
     "promptExample": "Vienna is the capital of Austria."
   },
   {
-    "id": "a1-98e764d539",
+    "id": "a1-a34751a0d3",
     "prompt": "the Switzerland",
-    "answer": "die die Schweiz",
+    "answer": "die Schweiz",
     "level": "A1",
     "type": "word",
     "answerExample": "Die Schweiz ist sehr schön.",
