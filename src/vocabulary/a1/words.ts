@@ -201,6 +201,15 @@ export const a1Words: Card[] = [
     "promptExample": "What is your name?"
   },
   {
+    "id": "a1-e4632eb9eb",
+    "prompt": "the names",
+    "answer": "die Namen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wie sind Ihre Namen?",
+    "promptExample": "What are your names?"
+  },
+  {
     "id": "a1-2a7ff3df6a",
     "prompt": "the first name",
     "answer": "der Vorname",
@@ -228,6 +237,15 @@ export const a1Words: Card[] = [
     "promptExample": "I'm writing down my address."
   },
   {
+    "id": "a1-7b7640e539",
+    "prompt": "the addresses",
+    "answer": "die Adressen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe alle Adressen aufgeschrieben.",
+    "promptExample": "I have written down all the addresses."
+  },
+  {
     "id": "a1-5bcbcb1beb",
     "prompt": "the street",
     "answer": "die Straße",
@@ -235,6 +253,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich wohne in der Hauptstraße.",
     "promptExample": "I live on Main Street."
+  },
+  {
+    "id": "a1-c603b44121",
+    "prompt": "the streets / roads",
+    "answer": "die Straßen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Straßen sind voll.",
+    "promptExample": "The streets are busy."
   },
   {
     "id": "a1-77fe3863b0",
@@ -264,6 +291,15 @@ export const a1Words: Card[] = [
     "promptExample": "I live in a big city."
   },
   {
+    "id": "a1-76d637b323",
+    "prompt": "the cities / towns",
+    "answer": "die Städte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Deutschland hat viele schöne Städte.",
+    "promptExample": "Germany has many beautiful cities."
+  },
+  {
     "id": "a1-e1eb4d65c7",
     "prompt": "the country",
     "answer": "das Land",
@@ -273,6 +309,15 @@ export const a1Words: Card[] = [
     "promptExample": "Which country are you from?"
   },
   {
+    "id": "a1-cd726589a0",
+    "prompt": "the countries",
+    "answer": "die Länder",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Europa hat viele Länder.",
+    "promptExample": "Europe has many countries."
+  },
+  {
     "id": "a1-228818c317",
     "prompt": "the nationality",
     "answer": "die Nationalität",
@@ -280,6 +325,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Was ist Ihre Nationalität?",
     "promptExample": "What is your nationality?"
+  },
+  {
+    "id": "a1-ea1489d7d5",
+    "prompt": "the nationalities",
+    "answer": "die Nationalitäten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt viele Nationalitäten hier.",
+    "promptExample": "There are many nationalities here."
   },
   {
     "id": "a1-8a421d5750",
@@ -327,6 +381,15 @@ export const a1Words: Card[] = [
     "promptExample": "What is your telephone number?"
   },
   {
+    "id": "a1-5bd79ef654",
+    "prompt": "the telephone numbers",
+    "answer": "die Telefonnummern",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe zwei Telefonnummern.",
+    "promptExample": "I have two telephone numbers."
+  },
+  {
     "id": "a1-40b8ab544f",
     "prompt": "the email address",
     "answer": "die E-Mail-Adresse",
@@ -343,6 +406,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Was ist Ihr Beruf?",
     "promptExample": "What is your profession?"
+  },
+  {
+    "id": "a1-bf62a7662a",
+    "prompt": "the professions / jobs",
+    "answer": "die Berufe",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt viele verschiedene Berufe.",
+    "promptExample": "There are many different professions."
   },
   {
     "id": "a1-89014174ec",
@@ -372,6 +444,15 @@ export const a1Words: Card[] = [
     "promptExample": "Please fill in the form."
   },
   {
+    "id": "a1-c1960f3403",
+    "prompt": "the forms",
+    "answer": "die Formulare",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Bitte füllen Sie alle Formulare aus.",
+    "promptExample": "Please fill in all the forms."
+  },
+  {
     "id": "a1-8bd3427749",
     "prompt": "the passport",
     "answer": "der Pass",
@@ -379,6 +460,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich brauche meinen Pass.",
     "promptExample": "I need my passport."
+  },
+  {
+    "id": "a1-18cc8bd862",
+    "prompt": "the passports",
+    "answer": "die Pässe",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Pässe liegen auf dem Tisch.",
+    "promptExample": "The passports are on the table."
   },
   {
     "id": "a1-5aa493cbb8",
@@ -399,6 +489,15 @@ export const a1Words: Card[] = [
     "promptExample": "My family lives in Berlin."
   },
   {
+    "id": "a1-1a29cd2205",
+    "prompt": "the families",
+    "answer": "die Familien",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Viele Familien wohnen hier.",
+    "promptExample": "Many families live here."
+  },
+  {
     "id": "a1-9e5c2b49ff",
     "prompt": "the mother",
     "answer": "die Mutter",
@@ -408,6 +507,15 @@ export const a1Words: Card[] = [
     "promptExample": "My mother cooks very well."
   },
   {
+    "id": "a1-e6bc50f8f1",
+    "prompt": "the mothers",
+    "answer": "die Mütter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Mütter warten vor der Schule.",
+    "promptExample": "The mothers are waiting in front of the school."
+  },
+  {
     "id": "a1-a76c8e8532",
     "prompt": "the father",
     "answer": "der Vater",
@@ -415,6 +523,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Mein Vater arbeitet viel.",
     "promptExample": "My father works a lot."
+  },
+  {
+    "id": "a1-76dde9448f",
+    "prompt": "the fathers",
+    "answer": "die Väter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Väter spielen mit den Kindern.",
+    "promptExample": "The fathers play with the children."
   },
   {
     "id": "a1-d227d65420",
@@ -435,6 +552,15 @@ export const a1Words: Card[] = [
     "promptExample": "My son goes to school."
   },
   {
+    "id": "a1-036b4ee4cc",
+    "prompt": "the sons",
+    "answer": "die Söhne",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Sie hat drei Söhne.",
+    "promptExample": "She has three sons."
+  },
+  {
     "id": "a1-f21dd7665e",
     "prompt": "the daughter",
     "answer": "die Tochter",
@@ -442,6 +568,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Tochter ist drei Jahre alt.",
     "promptExample": "My daughter is three years old."
+  },
+  {
+    "id": "a1-14278cb78b",
+    "prompt": "the daughters",
+    "answer": "die Töchter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir haben zwei Töchter.",
+    "promptExample": "We have two daughters."
   },
   {
     "id": "a1-1b0cb77a4a",
@@ -471,6 +606,15 @@ export const a1Words: Card[] = [
     "promptExample": "My brother is older than me."
   },
   {
+    "id": "a1-ec021f5c5c",
+    "prompt": "the brothers",
+    "answer": "die Brüder",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Er hat zwei Brüder.",
+    "promptExample": "He has two brothers."
+  },
+  {
     "id": "a1-a408302015",
     "prompt": "the sister",
     "answer": "die Schwester",
@@ -478,6 +622,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Schwester wohnt in Hamburg.",
     "promptExample": "My sister lives in Hamburg."
+  },
+  {
+    "id": "a1-8d721ebcef",
+    "prompt": "the sisters",
+    "answer": "die Schwestern",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Sie hat drei Schwestern.",
+    "promptExample": "She has three sisters."
   },
   {
     "id": "a1-b744d2c2ec",
@@ -498,6 +651,15 @@ export const a1Words: Card[] = [
     "promptExample": "My grandfather is 80 years old."
   },
   {
+    "id": "a1-44a25687d0",
+    "prompt": "the grandfathers",
+    "answer": "die Großväter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Beide Großväter sind alt.",
+    "promptExample": "Both grandfathers are old."
+  },
+  {
     "id": "a1-5f51096787",
     "prompt": "the grandmother",
     "answer": "die Großmutter",
@@ -505,6 +667,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Großmutter kocht sehr gut.",
     "promptExample": "My grandmother cooks very well."
+  },
+  {
+    "id": "a1-43f7f6ffab",
+    "prompt": "the grandmothers",
+    "answer": "die Großmütter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Großmütter kochen zusammen.",
+    "promptExample": "The grandmothers cook together."
   },
   {
     "id": "a1-3028c18438",
@@ -525,6 +696,15 @@ export const a1Words: Card[] = [
     "promptExample": "The grandson visits his grandmother."
   },
   {
+    "id": "a1-e09aad5504",
+    "prompt": "the grandsons",
+    "answer": "die Enkel",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Er hat vier Enkel.",
+    "promptExample": "He has four grandsons."
+  },
+  {
     "id": "a1-83f6cb646b",
     "prompt": "the granddaughter",
     "answer": "die Enkelin",
@@ -532,6 +712,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Enkelin spielt mit der Oma.",
     "promptExample": "The granddaughter plays with her grandmother."
+  },
+  {
+    "id": "a1-2fa1559b9e",
+    "prompt": "the granddaughters",
+    "answer": "die Enkelinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe zwei Enkelinnen.",
+    "promptExample": "I have two granddaughters."
   },
   {
     "id": "a1-3e3e86f634",
@@ -543,6 +732,15 @@ export const a1Words: Card[] = [
     "promptExample": "My uncle lives in Austria."
   },
   {
+    "id": "a1-a7d1796498",
+    "prompt": "the uncles",
+    "answer": "die Onkel",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Onkel kommen zu Besuch.",
+    "promptExample": "My uncles are coming to visit."
+  },
+  {
     "id": "a1-ce37a6b2cb",
     "prompt": "the aunt",
     "answer": "die Tante",
@@ -550,6 +748,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Tante besucht uns morgen.",
     "promptExample": "My aunt is visiting us tomorrow."
+  },
+  {
+    "id": "a1-08b0b15e43",
+    "prompt": "the aunts",
+    "answer": "die Tanten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Tanten wohnen in Bayern.",
+    "promptExample": "My aunts live in Bavaria."
   },
   {
     "id": "a1-390e5a9bc1",
@@ -561,6 +768,15 @@ export const a1Words: Card[] = [
     "promptExample": "My cousin plays football."
   },
   {
+    "id": "a1-082e012283",
+    "prompt": "the male cousins",
+    "answer": "die Cousins",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Cousins spielen Fußball.",
+    "promptExample": "My cousins play football."
+  },
+  {
     "id": "a1-802669eefe",
     "prompt": "the female cousin",
     "answer": "die Cousine",
@@ -568,6 +784,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Cousine studiert Medizin.",
     "promptExample": "My female cousin studies medicine."
+  },
+  {
+    "id": "a1-b6bf4d8200",
+    "prompt": "the female cousins",
+    "answer": "die Cousinen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Cousinen studieren in Berlin.",
+    "promptExample": "My cousins study in Berlin."
   },
   {
     "id": "a1-256fa79eef",
@@ -633,6 +858,15 @@ export const a1Words: Card[] = [
     "promptExample": "My boyfriend's name is Max."
   },
   {
+    "id": "a1-532a949cc2",
+    "prompt": "the friends (male/mixed)",
+    "answer": "die Freunde",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Freunde kommen heute.",
+    "promptExample": "My friends are coming today."
+  },
+  {
     "id": "a1-a5e6a05f33",
     "prompt": "the girlfriend / female friend",
     "answer": "die Freundin",
@@ -640,6 +874,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Freundin wohnt in Wien.",
     "promptExample": "My girlfriend lives in Vienna."
+  },
+  {
+    "id": "a1-73bb540013",
+    "prompt": "the friends (female)",
+    "answer": "die Freundinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Freundinnen sind sehr nett.",
+    "promptExample": "My friends are very nice."
   },
   {
     "id": "a1-af1dcfc9e8",
@@ -651,6 +894,15 @@ export const a1Words: Card[] = [
     "promptExample": "The doctor examines the patient."
   },
   {
+    "id": "a1-00f0e0a888",
+    "prompt": "the doctors (male)",
+    "answer": "die Ärzte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Ärzte arbeiten lange.",
+    "promptExample": "The doctors work long hours."
+  },
+  {
     "id": "a1-316bf84837",
     "prompt": "the doctor (female)",
     "answer": "die Ärztin",
@@ -658,6 +910,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Ärztin kommt um neun Uhr.",
     "promptExample": "The doctor (female) comes at nine o'clock."
+  },
+  {
+    "id": "a1-bb4ac740a9",
+    "prompt": "the doctors (female)",
+    "answer": "die Ärztinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Ärztinnen haben viel Erfahrung.",
+    "promptExample": "The female doctors have a lot of experience."
   },
   {
     "id": "a1-02e6b3e62e",
@@ -669,6 +930,15 @@ export const a1Words: Card[] = [
     "promptExample": "The teacher explains the exercise."
   },
   {
+    "id": "a1-abccc603f0",
+    "prompt": "the teachers (male)",
+    "answer": "die Lehrer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Lehrer haben eine Besprechung.",
+    "promptExample": "The teachers have a meeting."
+  },
+  {
     "id": "a1-7d2b9bddb7",
     "prompt": "the teacher (female)",
     "answer": "die Lehrerin",
@@ -676,6 +946,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Lehrerin spricht sehr langsam.",
     "promptExample": "The teacher (female) speaks very slowly."
+  },
+  {
+    "id": "a1-868b959244",
+    "prompt": "the teachers (female)",
+    "answer": "die Lehrerinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Lehrerinnen kommen aus Deutschland.",
+    "promptExample": "The female teachers come from Germany."
   },
   {
     "id": "a1-5d5ba8b3f1",
@@ -687,6 +966,15 @@ export const a1Words: Card[] = [
     "promptExample": "The pupil does his homework."
   },
   {
+    "id": "a1-d1641085fd",
+    "prompt": "the pupils (male/mixed)",
+    "answer": "die Schüler",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Schüler lernen fleißig.",
+    "promptExample": "The pupils study hard."
+  },
+  {
     "id": "a1-fc9eadf37e",
     "prompt": "the pupil (female)",
     "answer": "die Schülerin",
@@ -694,6 +982,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Schülerin liest ein Buch.",
     "promptExample": "The pupil (female) reads a book."
+  },
+  {
+    "id": "a1-1c64535b3b",
+    "prompt": "the pupils (female)",
+    "answer": "die Schülerinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Schülerinnen lesen viel.",
+    "promptExample": "The female pupils read a lot."
   },
   {
     "id": "a1-fec226e98d",
@@ -705,6 +1002,15 @@ export const a1Words: Card[] = [
     "promptExample": "The student studies for the exam."
   },
   {
+    "id": "a1-0b2a38632d",
+    "prompt": "the students (male/mixed)",
+    "answer": "die Studenten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Studenten lernen für die Prüfung.",
+    "promptExample": "The students are studying for the exam."
+  },
+  {
     "id": "a1-44577fab86",
     "prompt": "the student (female)",
     "answer": "die Studentin",
@@ -712,6 +1018,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Studentin wohnt im Studentenwohnheim.",
     "promptExample": "The student (female) lives in the student hall."
+  },
+  {
+    "id": "a1-7f85e9a24f",
+    "prompt": "the students (female)",
+    "answer": "die Studentinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Studentinnen wohnen im Wohnheim.",
+    "promptExample": "The female students live in the hall of residence."
   },
   {
     "id": "a1-a912b6135f",
@@ -741,6 +1056,15 @@ export const a1Words: Card[] = [
     "promptExample": "My colleague likes to help me."
   },
   {
+    "id": "a1-b5aa45c2b3",
+    "prompt": "the colleagues (male/mixed)",
+    "answer": "die Kollegen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Kollegen sind sehr nett.",
+    "promptExample": "My colleagues are very nice."
+  },
+  {
     "id": "a1-f6c1f3563b",
     "prompt": "the colleague (female)",
     "answer": "die Kollegin",
@@ -748,6 +1072,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Kollegin kommt aus Spanien.",
     "promptExample": "My colleague (female) comes from Spain."
+  },
+  {
+    "id": "a1-1d873d8fed",
+    "prompt": "the colleagues (female)",
+    "answer": "die Kolleginnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kolleginnen essen zusammen.",
+    "promptExample": "The female colleagues eat together."
   },
   {
     "id": "a1-38eb859f56",
@@ -759,6 +1092,15 @@ export const a1Words: Card[] = [
     "promptExample": "The sales assistant is very friendly."
   },
   {
+    "id": "a1-d09e4cfd42",
+    "prompt": "the sales assistants (male)",
+    "answer": "die Verkäufer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Verkäufer helfen den Kunden.",
+    "promptExample": "The sales assistants help the customers."
+  },
+  {
     "id": "a1-8236fa0000",
     "prompt": "the sales assistant (female)",
     "answer": "die Verkäuferin",
@@ -766,6 +1108,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Verkäuferin zeigt mir das Produkt.",
     "promptExample": "The sales assistant (female) shows me the product."
+  },
+  {
+    "id": "a1-ea105f48f4",
+    "prompt": "the sales assistants (female)",
+    "answer": "die Verkäuferinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Verkäuferinnen sind sehr freundlich.",
+    "promptExample": "The female sales assistants are very friendly."
   },
   {
     "id": "a1-3fbb61d2be",
@@ -777,6 +1128,15 @@ export const a1Words: Card[] = [
     "promptExample": "The waiter brings the bill."
   },
   {
+    "id": "a1-392310030a",
+    "prompt": "the waiters",
+    "answer": "die Kellner",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kellner bringen das Essen.",
+    "promptExample": "The waiters bring the food."
+  },
+  {
     "id": "a1-a73ef6ce3f",
     "prompt": "the waitress",
     "answer": "die Kellnerin",
@@ -784,6 +1144,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Kellnerin kommt sofort.",
     "promptExample": "The waitress comes immediately."
+  },
+  {
+    "id": "a1-2fb2f26339",
+    "prompt": "the waitresses",
+    "answer": "die Kellnerinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kellnerinnen sind beschäftigt.",
+    "promptExample": "The waitresses are busy."
   },
   {
     "id": "a1-22564dc7c9",
@@ -795,6 +1164,15 @@ export const a1Words: Card[] = [
     "promptExample": "The police officer helps us."
   },
   {
+    "id": "a1-f5921da526",
+    "prompt": "the police officers (male)",
+    "answer": "die Polizisten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Polizisten helfen bei dem Unfall.",
+    "promptExample": "The police officers help at the accident."
+  },
+  {
     "id": "a1-7e410bcfc7",
     "prompt": "the police officer (female)",
     "answer": "die Polizistin",
@@ -802,6 +1180,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Polizistin zeigt uns den Weg.",
     "promptExample": "The police officer (female) shows us the way."
+  },
+  {
+    "id": "a1-3e2ed0e99d",
+    "prompt": "the police officers (female)",
+    "answer": "die Polizistinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Polizistinnen regeln den Verkehr.",
+    "promptExample": "The female police officers direct the traffic."
   },
   {
     "id": "a1-c9b1fc6c21",
@@ -831,6 +1218,15 @@ export const a1Words: Card[] = [
     "promptExample": "The cook makes very tasty food."
   },
   {
+    "id": "a1-373347813a",
+    "prompt": "the cooks (male)",
+    "answer": "die Köche",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Köche kochen sehr lecker.",
+    "promptExample": "The cooks make very tasty food."
+  },
+  {
     "id": "a1-b8b5411ade",
     "prompt": "the cook / chef (female)",
     "answer": "die Köchin",
@@ -838,6 +1234,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Köchin arbeitet im Restaurant.",
     "promptExample": "The cook (female) works in the restaurant."
+  },
+  {
+    "id": "a1-5fc035d70d",
+    "prompt": "the cooks (female)",
+    "answer": "die Köchinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Köchinnen arbeiten im Restaurant.",
+    "promptExample": "The female cooks work in the restaurant."
   },
   {
     "id": "a1-e655e5583b",
@@ -885,6 +1290,15 @@ export const a1Words: Card[] = [
     "promptExample": "The pensioner goes for a walk every day."
   },
   {
+    "id": "a1-06fec7d109",
+    "prompt": "the pensioners (male)",
+    "answer": "die Rentner",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Rentner gehen spazieren.",
+    "promptExample": "The pensioners go for a walk."
+  },
+  {
     "id": "a1-d4de0fd714",
     "prompt": "the pensioner (female)",
     "answer": "die Rentnerin",
@@ -892,6 +1306,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Rentnerin liest gern Bücher.",
     "promptExample": "The pensioner (female) likes to read books."
+  },
+  {
+    "id": "a1-1a9157ed58",
+    "prompt": "the pensioners (female)",
+    "answer": "die Rentnerinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Rentnerinnen treffen sich im Café.",
+    "promptExample": "The female pensioners meet in the café."
   },
   {
     "id": "a1-f3e811149f",
@@ -903,6 +1326,15 @@ export const a1Words: Card[] = [
     "promptExample": "The worker starts at seven o'clock."
   },
   {
+    "id": "a1-07a0af1892",
+    "prompt": "the workers (male)",
+    "answer": "die Arbeiter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Arbeiter fangen früh an.",
+    "promptExample": "The workers start early."
+  },
+  {
     "id": "a1-d9094fe2cc",
     "prompt": "the worker (female)",
     "answer": "die Arbeiterin",
@@ -910,6 +1342,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Arbeiterin trägt einen Helm.",
     "promptExample": "The worker (female) wears a helmet."
+  },
+  {
+    "id": "a1-be0c56cd55",
+    "prompt": "the workers (female)",
+    "answer": "die Arbeiterinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Arbeiterinnen tragen Helme.",
+    "promptExample": "The female workers wear helmets."
   },
   {
     "id": "a1-3ac4c87205",
@@ -993,6 +1434,15 @@ export const a1Words: Card[] = [
     "promptExample": "Which language do you speak?"
   },
   {
+    "id": "a1-18a25fcdb9",
+    "prompt": "the languages",
+    "answer": "die Sprachen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Er spricht drei Sprachen.",
+    "promptExample": "He speaks three languages."
+  },
+  {
     "id": "a1-639d92b64c",
     "prompt": "the abroad / foreign country",
     "answer": "das Ausland",
@@ -1011,6 +1461,15 @@ export const a1Words: Card[] = [
     "promptExample": "The foreigner learns German quickly."
   },
   {
+    "id": "a1-e2f93b6dab",
+    "prompt": "the foreigners (male/mixed)",
+    "answer": "die Ausländer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Viele Ausländer lernen Deutsch.",
+    "promptExample": "Many foreigners learn German."
+  },
+  {
     "id": "a1-a72f7c190a",
     "prompt": "the foreigner (female)",
     "answer": "die Ausländerin",
@@ -1018,6 +1477,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Ausländerin wohnt seit einem Jahr hier.",
     "promptExample": "The foreigner (female) has been living here for a year."
+  },
+  {
+    "id": "a1-d319a8a059",
+    "prompt": "the foreigners (female)",
+    "answer": "die Ausländerinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Ausländerinnen wohnen seit einem Jahr hier.",
+    "promptExample": "The foreign women have been living here for a year."
   },
   {
     "id": "a1-07c1b0deb6",
@@ -1200,6 +1668,15 @@ export const a1Words: Card[] = [
     "promptExample": "The course lasts one hour."
   },
   {
+    "id": "a1-066b0d253d",
+    "prompt": "the hours",
+    "answer": "die Stunden",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Der Kurs dauert drei Stunden.",
+    "promptExample": "The course lasts three hours."
+  },
+  {
     "id": "a1-a252d2af8e",
     "prompt": "the minute",
     "answer": "die Minute",
@@ -1207,6 +1684,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich komme in fünf Minuten.",
     "promptExample": "I'll be there in five minutes."
+  },
+  {
+    "id": "a1-04d86eadcc",
+    "prompt": "the minutes",
+    "answer": "die Minuten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich warte schon zwanzig Minuten.",
+    "promptExample": "I have already been waiting twenty minutes."
   },
   {
     "id": "a1-91f8f25253",
@@ -1218,6 +1704,15 @@ export const a1Words: Card[] = [
     "promptExample": "Wait a second!"
   },
   {
+    "id": "a1-4c40e56e38",
+    "prompt": "the seconds",
+    "answer": "die Sekunden",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Das dauert nur ein paar Sekunden.",
+    "promptExample": "That only takes a few seconds."
+  },
+  {
     "id": "a1-a5dac84e8a",
     "prompt": "the day",
     "answer": "der Tag",
@@ -1225,6 +1720,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Der Tag hat 24 Stunden.",
     "promptExample": "A day has 24 hours."
+  },
+  {
+    "id": "a1-2bb2797453",
+    "prompt": "the days",
+    "answer": "die Tage",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich bin drei Tage in Wien.",
+    "promptExample": "I am in Vienna for three days."
   },
   {
     "id": "a1-ed5c2490bd",
@@ -1236,6 +1740,15 @@ export const a1Words: Card[] = [
     "promptExample": "I work five days a week."
   },
   {
+    "id": "a1-382a593f13",
+    "prompt": "the weeks",
+    "answer": "die Wochen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In zwei Wochen fahre ich in Urlaub.",
+    "promptExample": "In two weeks I'm going on holiday."
+  },
+  {
     "id": "a1-e4d0ff3da4",
     "prompt": "the month",
     "answer": "der Monat",
@@ -1245,6 +1758,15 @@ export const a1Words: Card[] = [
     "promptExample": "The month has 30 days."
   },
   {
+    "id": "a1-d9c1c13974",
+    "prompt": "the months",
+    "answer": "die Monate",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Das Jahr hat zwölf Monate.",
+    "promptExample": "The year has twelve months."
+  },
+  {
     "id": "a1-6b9f608208",
     "prompt": "the year",
     "answer": "das Jahr",
@@ -1252,6 +1774,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Das Jahr hat zwölf Monate.",
     "promptExample": "The year has twelve months."
+  },
+  {
+    "id": "a1-8d048a43cf",
+    "prompt": "the years",
+    "answer": "die Jahre",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir wohnen seit drei Jahren hier.",
+    "promptExample": "We have been living here for three years."
   },
   {
     "id": "a1-5b93b6c0a8",
@@ -1542,6 +2073,15 @@ export const a1Words: Card[] = [
     "promptExample": "I have a doctor's appointment."
   },
   {
+    "id": "a1-4ea25fcc4d",
+    "prompt": "the appointments",
+    "answer": "die Termine",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe viele Termine diese Woche.",
+    "promptExample": "I have many appointments this week."
+  },
+  {
     "id": "a1-fd8648e48a",
     "prompt": "the date",
     "answer": "das Datum",
@@ -1558,6 +2098,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Lieblingsjahreszeit ist der Sommer.",
     "promptExample": "My favourite season is summer."
+  },
+  {
+    "id": "a1-3cb8ccdbc6",
+    "prompt": "the seasons",
+    "answer": "die Jahreszeiten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt vier Jahreszeiten.",
+    "promptExample": "There are four seasons."
   },
   {
     "id": "a1-0f22baa1ae",
@@ -1612,6 +2161,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Am Feiertag machen die Geschäfte zu.",
     "promptExample": "On public holidays shops close."
+  },
+  {
+    "id": "a1-3e4c825c7f",
+    "prompt": "the public holidays",
+    "answer": "die Feiertage",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Im Dezember gibt es viele Feiertage.",
+    "promptExample": "In December there are many public holidays."
   },
   {
     "id": "a1-9ce50e3309",
@@ -1695,6 +2253,15 @@ export const a1Words: Card[] = [
     "promptExample": "For breakfast I eat a bread roll."
   },
   {
+    "id": "a1-f423856d4b",
+    "prompt": "the bread rolls",
+    "answer": "die Brötchen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich kaufe fünf Brötchen.",
+    "promptExample": "I buy five bread rolls."
+  },
+  {
     "id": "a1-0d470f0e43",
     "prompt": "the butter",
     "answer": "die Butter",
@@ -1720,6 +2287,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich esse Wurst zum Frühstück.",
     "promptExample": "I eat sausage for breakfast."
+  },
+  {
+    "id": "a1-01033a8a14",
+    "prompt": "the sausages",
+    "answer": "die Würste",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt verschiedene Würste.",
+    "promptExample": "There are various sausages."
   },
   {
     "id": "a1-46ae3c58b5",
@@ -1839,6 +2415,15 @@ export const a1Words: Card[] = [
     "promptExample": "The banana is ripe."
   },
   {
+    "id": "a1-1d1ddd1539",
+    "prompt": "the bananas",
+    "answer": "die Bananen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich kaufe vier Bananen.",
+    "promptExample": "I buy four bananas."
+  },
+  {
     "id": "a1-18c4a3710f",
     "prompt": "the orange",
     "answer": "die Orange",
@@ -1848,6 +2433,15 @@ export const a1Words: Card[] = [
     "promptExample": "I drink orange juice."
   },
   {
+    "id": "a1-ad7598d9a4",
+    "prompt": "the oranges",
+    "answer": "die Orangen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir essen zwei Orangen.",
+    "promptExample": "We eat two oranges."
+  },
+  {
     "id": "a1-3d733c5a98",
     "prompt": "the tomato",
     "answer": "die Tomate",
@@ -1855,6 +2449,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Tomate ist rot.",
     "promptExample": "The tomato is red."
+  },
+  {
+    "id": "a1-6bcc7572aa",
+    "prompt": "the tomatoes",
+    "answer": "die Tomaten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich kaufe drei Tomaten.",
+    "promptExample": "I buy three tomatoes."
   },
   {
     "id": "a1-9e5ff43d69",
@@ -2019,6 +2622,15 @@ export const a1Words: Card[] = [
     "promptExample": "We eat in the restaurant."
   },
   {
+    "id": "a1-a63fe8405e",
+    "prompt": "the restaurants",
+    "answer": "die Restaurants",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir kennen viele gute Restaurants.",
+    "promptExample": "We know many good restaurants."
+  },
+  {
     "id": "a1-c9da9c04ac",
     "prompt": "the menu",
     "answer": "die Speisekarte",
@@ -2026,6 +2638,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Kann ich die Speisekarte haben?",
     "promptExample": "Can I have the menu?"
+  },
+  {
+    "id": "a1-8dcd850cab",
+    "prompt": "the menus",
+    "answer": "die Speisekarten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kellner bringen die Speisekarten.",
+    "promptExample": "The waiters bring the menus."
   },
   {
     "id": "a1-024e207678",
@@ -2037,6 +2658,15 @@ export const a1Words: Card[] = [
     "promptExample": "The bill, please!"
   },
   {
+    "id": "a1-98e8e310b7",
+    "prompt": "the bills / invoices",
+    "answer": "die Rechnungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich bezahle alle Rechnungen.",
+    "promptExample": "I pay all the bills."
+  },
+  {
     "id": "a1-49be50e3c9",
     "prompt": "the portion",
     "answer": "die Portion",
@@ -2044,6 +2674,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Eine Portion Pommes, bitte.",
     "promptExample": "One portion of chips, please."
+  },
+  {
+    "id": "a1-f9377d98c4",
+    "prompt": "the portions",
+    "answer": "die Portionen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir bestellen zwei Portionen.",
+    "promptExample": "We order two portions."
   },
   {
     "id": "a1-79737fddca",
@@ -2253,6 +2892,15 @@ export const a1Words: Card[] = [
     "promptExample": "I need a shopping bag."
   },
   {
+    "id": "a1-779609565d",
+    "prompt": "the shopping bags",
+    "answer": "die Einkaufstaschen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich brauche zwei Einkaufstaschen.",
+    "promptExample": "I need two shopping bags."
+  },
+  {
     "id": "a1-a008c1af30",
     "prompt": "the receipt",
     "answer": "die Quittung",
@@ -2262,6 +2910,15 @@ export const a1Words: Card[] = [
     "promptExample": "Can I have a receipt?"
   },
   {
+    "id": "a1-91559f9491",
+    "prompt": "the receipts",
+    "answer": "die Quittungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Bitte bewahren Sie die Quittungen auf.",
+    "promptExample": "Please keep the receipts."
+  },
+  {
     "id": "a1-39cd755a5f",
     "prompt": "the special offer",
     "answer": "das Sonderangebot",
@@ -2269,6 +2926,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Das ist heute im Sonderangebot.",
     "promptExample": "That is on special offer today."
+  },
+  {
+    "id": "a1-18239b032e",
+    "prompt": "the special offers",
+    "answer": "die Sonderangebote",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Heute gibt es viele Sonderangebote.",
+    "promptExample": "Today there are many special offers."
   },
   {
     "id": "a1-e2ec7be13b",
@@ -2289,6 +2955,15 @@ export const a1Words: Card[] = [
     "promptExample": "What is your size?"
   },
   {
+    "id": "a1-64a56b4371",
+    "prompt": "the sizes",
+    "answer": "die Größen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Hose gibt es in verschiedenen Größen.",
+    "promptExample": "The trousers are available in various sizes."
+  },
+  {
     "id": "a1-b6c3a93f3e",
     "prompt": "the clothing",
     "answer": "die Kleidung",
@@ -2307,6 +2982,15 @@ export const a1Words: Card[] = [
     "promptExample": "I need a warm jacket."
   },
   {
+    "id": "a1-9292470320",
+    "prompt": "the jackets",
+    "answer": "die Jacken",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Jacken sind sehr günstig.",
+    "promptExample": "The jackets are very affordable."
+  },
+  {
     "id": "a1-6c3bfa31c9",
     "prompt": "the trousers / pants",
     "answer": "die Hose",
@@ -2314,6 +2998,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Hose ist zu lang.",
     "promptExample": "The trousers are too long."
+  },
+  {
+    "id": "a1-95f90026f8",
+    "prompt": "the pairs of trousers",
+    "answer": "die Hosen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich probiere zwei Hosen an.",
+    "promptExample": "I try on two pairs of trousers."
   },
   {
     "id": "a1-f4b5838c1a",
@@ -2325,6 +3018,15 @@ export const a1Words: Card[] = [
     "promptExample": "The shirt is white."
   },
   {
+    "id": "a1-4cc1d602fe",
+    "prompt": "the shirts",
+    "answer": "die Hemden",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Er hat drei Hemden gekauft.",
+    "promptExample": "He bought three shirts."
+  },
+  {
     "id": "a1-9ef34b3b91",
     "prompt": "the blouse",
     "answer": "die Bluse",
@@ -2332,6 +3034,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Bluse ist sehr schön.",
     "promptExample": "The blouse is very beautiful."
+  },
+  {
+    "id": "a1-f5384a502a",
+    "prompt": "the blouses",
+    "answer": "die Blusen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Blusen sind sehr schön.",
+    "promptExample": "The blouses are very beautiful."
   },
   {
     "id": "a1-54ff7bf5e1",
@@ -2350,6 +3061,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Das Kleid ist sehr elegant.",
     "promptExample": "The dress is very elegant."
+  },
+  {
+    "id": "a1-81ff4bcc2c",
+    "prompt": "the dresses",
+    "answer": "die Kleider",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kleider sind elegant.",
+    "promptExample": "The dresses are elegant."
   },
   {
     "id": "a1-fcfa816a1c",
@@ -2379,6 +3099,15 @@ export const a1Words: Card[] = [
     "promptExample": "I'm wearing a hat."
   },
   {
+    "id": "a1-fa00863a83",
+    "prompt": "the hats / beanies",
+    "answer": "die Mützen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Im Winter tragen wir Mützen.",
+    "promptExample": "In winter we wear hats."
+  },
+  {
     "id": "a1-4d4fa8394c",
     "prompt": "the flat / apartment",
     "answer": "die Wohnung",
@@ -2386,6 +3115,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich suche eine Wohnung.",
     "promptExample": "I'm looking for a flat."
+  },
+  {
+    "id": "a1-8eb31e5981",
+    "prompt": "the flats / apartments",
+    "answer": "die Wohnungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Wohnungen sind sehr teuer.",
+    "promptExample": "The flats are very expensive."
   },
   {
     "id": "a1-274232d168",
@@ -2413,6 +3151,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Wohnung hat drei Zimmer.",
     "promptExample": "The flat has three rooms."
+  },
+  {
+    "id": "a1-7711b29c5b",
+    "prompt": "the rooms",
+    "answer": "die Zimmer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Wohnung hat vier Zimmer.",
+    "promptExample": "The flat has four rooms."
   },
   {
     "id": "a1-02450664d1",
@@ -2478,6 +3225,15 @@ export const a1Words: Card[] = [
     "promptExample": "Old furniture is in the cellar."
   },
   {
+    "id": "a1-fa4500903f",
+    "prompt": "the cellars / basements",
+    "answer": "die Keller",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Häuser haben große Keller.",
+    "promptExample": "The houses have large cellars."
+  },
+  {
     "id": "a1-c52a1dff1b",
     "prompt": "the garden",
     "answer": "der Garten",
@@ -2485,6 +3241,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich sitze im Garten.",
     "promptExample": "I'm sitting in the garden."
+  },
+  {
+    "id": "a1-51a220d73c",
+    "prompt": "the gardens",
+    "answer": "die Gärten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Gärten hier sind sehr schön.",
+    "promptExample": "The gardens here are very beautiful."
   },
   {
     "id": "a1-155c733eb1",
@@ -2505,6 +3270,15 @@ export const a1Words: Card[] = [
     "promptExample": "Please close the door."
   },
   {
+    "id": "a1-658d325e2a",
+    "prompt": "the doors",
+    "answer": "die Türen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Bitte schließen Sie alle Türen.",
+    "promptExample": "Please close all the doors."
+  },
+  {
     "id": "a1-2235f9d7b1",
     "prompt": "the window",
     "answer": "das Fenster",
@@ -2512,6 +3286,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Öffne bitte das Fenster.",
     "promptExample": "Please open the window."
+  },
+  {
+    "id": "a1-76ae082c83",
+    "prompt": "the windows",
+    "answer": "die Fenster",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Öffne bitte die Fenster.",
+    "promptExample": "Please open the windows."
   },
   {
     "id": "a1-8f93f950b8",
@@ -2577,6 +3360,15 @@ export const a1Words: Card[] = [
     "promptExample": "The food is on the table."
   },
   {
+    "id": "a1-4d5f0cb9db",
+    "prompt": "the tables",
+    "answer": "die Tische",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir haben vier Tische im Büro.",
+    "promptExample": "We have four tables in the office."
+  },
+  {
     "id": "a1-b109795acc",
     "prompt": "the chair",
     "answer": "der Stuhl",
@@ -2622,6 +3414,15 @@ export const a1Words: Card[] = [
     "promptExample": "The clothes are hanging in the wardrobe."
   },
   {
+    "id": "a1-151ea32b7f",
+    "prompt": "the cupboards / wardrobes",
+    "answer": "die Schränke",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Schränke sind voll.",
+    "promptExample": "The cupboards are full."
+  },
+  {
     "id": "a1-b3fc52f59e",
     "prompt": "the shelf",
     "answer": "das Regal",
@@ -2631,6 +3432,15 @@ export const a1Words: Card[] = [
     "promptExample": "Books are on the shelf."
   },
   {
+    "id": "a1-1d4f3e9266",
+    "prompt": "the shelves",
+    "answer": "die Regale",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Regale sind voller Bücher.",
+    "promptExample": "The shelves are full of books."
+  },
+  {
     "id": "a1-75a563bd6f",
     "prompt": "the lamp / light",
     "answer": "die Lampe",
@@ -2638,6 +3448,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Lampe ist kaputt.",
     "promptExample": "The lamp is broken."
+  },
+  {
+    "id": "a1-85a42787dd",
+    "prompt": "the lamps",
+    "answer": "die Lampen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Im Wohnzimmer gibt es zwei Lampen.",
+    "promptExample": "There are two lamps in the living room."
   },
   {
     "id": "a1-a2d6719b44",
@@ -2703,6 +3522,15 @@ export const a1Words: Card[] = [
     "promptExample": "My neighbour is very nice."
   },
   {
+    "id": "a1-d03ecb1838",
+    "prompt": "the neighbours (male/mixed)",
+    "answer": "die Nachbarn",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Nachbarn sind sehr nett.",
+    "promptExample": "My neighbours are very nice."
+  },
+  {
     "id": "a1-f42742023a",
     "prompt": "the neighbour (female)",
     "answer": "die Nachbarin",
@@ -2710,6 +3538,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Meine Nachbarin hat mir geholfen.",
     "promptExample": "My neighbour (female) helped me."
+  },
+  {
+    "id": "a1-709ca549c4",
+    "prompt": "the neighbours (female)",
+    "answer": "die Nachbarinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Nachbarinnen haben mir geholfen.",
+    "promptExample": "My female neighbours helped me."
   },
   {
     "id": "a1-6dc460d806",
@@ -2739,6 +3576,15 @@ export const a1Words: Card[] = [
     "promptExample": "I drive to work by car."
   },
   {
+    "id": "a1-f50cb70814",
+    "prompt": "the cars",
+    "answer": "die Autos",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Auf der Straße sind viele Autos.",
+    "promptExample": "There are many cars on the road."
+  },
+  {
     "id": "a1-90f67bd6c9",
     "prompt": "the bus",
     "answer": "der Bus",
@@ -2748,6 +3594,15 @@ export const a1Words: Card[] = [
     "promptExample": "I travel by bus."
   },
   {
+    "id": "a1-ee894e0290",
+    "prompt": "the buses",
+    "answer": "die Busse",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Busse kommen alle zehn Minuten.",
+    "promptExample": "The buses come every ten minutes."
+  },
+  {
     "id": "a1-8f53ea4abd",
     "prompt": "the train",
     "answer": "der Zug",
@@ -2755,6 +3610,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Der Zug fährt um acht Uhr ab.",
     "promptExample": "The train departs at eight o'clock."
+  },
+  {
+    "id": "a1-a0f0ca9e79",
+    "prompt": "the trains",
+    "answer": "die Züge",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Züge fahren pünktlich ab.",
+    "promptExample": "The trains depart on time."
   },
   {
     "id": "a1-62606dd7b8",
@@ -2791,6 +3655,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich rufe ein Taxi.",
     "promptExample": "I call a taxi."
+  },
+  {
+    "id": "a1-b5729ebf83",
+    "prompt": "the taxis",
+    "answer": "die Taxis",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Vor dem Hotel warten viele Taxis.",
+    "promptExample": "Many taxis are waiting in front of the hotel."
   },
   {
     "id": "a1-486189c13b",
@@ -2874,6 +3747,15 @@ export const a1Words: Card[] = [
     "promptExample": "Do you have a ticket?"
   },
   {
+    "id": "a1-2a4db54e63",
+    "prompt": "the tickets",
+    "answer": "die Tickets",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir kaufen zwei Tickets.",
+    "promptExample": "We buy two tickets."
+  },
+  {
     "id": "a1-9f456ce772",
     "prompt": "the departure",
     "answer": "die Abfahrt",
@@ -2946,6 +3828,15 @@ export const a1Words: Card[] = [
     "promptExample": "The street is very wide."
   },
   {
+    "id": "a1-c603b44121",
+    "prompt": "the streets / roads",
+    "answer": "die Straßen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Straßen sind voll.",
+    "promptExample": "The streets are busy."
+  },
+  {
     "id": "a1-497cb3282b",
     "prompt": "the way / path",
     "answer": "der Weg",
@@ -2955,6 +3846,15 @@ export const a1Words: Card[] = [
     "promptExample": "What is the way to the train station?"
   },
   {
+    "id": "a1-d55a3c6bad",
+    "prompt": "the ways / paths",
+    "answer": "die Wege",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt zwei Wege zum Bahnhof.",
+    "promptExample": "There are two ways to the train station."
+  },
+  {
     "id": "a1-0031788012",
     "prompt": "the direction",
     "answer": "die Richtung",
@@ -2962,6 +3862,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "In welche Richtung gehen wir?",
     "promptExample": "In which direction are we going?"
+  },
+  {
+    "id": "a1-0d71185916",
+    "prompt": "the directions",
+    "answer": "die Richtungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Richtungen sind klar.",
+    "promptExample": "The directions are clear."
   },
   {
     "id": "a1-9c933e4c93",
@@ -3027,6 +3936,15 @@ export const a1Words: Card[] = [
     "promptExample": "The place is ten kilometres away."
   },
   {
+    "id": "a1-5409c0117e",
+    "prompt": "the kilometres",
+    "answer": "die Kilometer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir fahren hundert Kilometer.",
+    "promptExample": "We drive one hundred kilometres."
+  },
+  {
     "id": "a1-701b757f2f",
     "prompt": "the car park / parking space",
     "answer": "der Parkplatz",
@@ -3034,6 +3952,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich suche einen Parkplatz.",
     "promptExample": "I'm looking for a parking space."
+  },
+  {
+    "id": "a1-c741526d6e",
+    "prompt": "the parking spaces",
+    "answer": "die Parkplätze",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt wenig Parkplätze.",
+    "promptExample": "There are few parking spaces."
   },
   {
     "id": "a1-a05ec9478e",
@@ -3072,6 +3999,15 @@ export const a1Words: Card[] = [
     "promptExample": "I'm packing my suitcase."
   },
   {
+    "id": "a1-a258d88f7b",
+    "prompt": "the suitcases",
+    "answer": "die Koffer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Koffer sind schwer.",
+    "promptExample": "The suitcases are heavy."
+  },
+  {
     "id": "a1-8a50e5716d",
     "prompt": "the journey / trip / travel",
     "answer": "die Reise",
@@ -3081,6 +4017,15 @@ export const a1Words: Card[] = [
     "promptExample": "The journey takes three hours."
   },
   {
+    "id": "a1-0e7ee5f56b",
+    "prompt": "the journeys / trips",
+    "answer": "die Reisen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich mache viele Reisen.",
+    "promptExample": "I go on many trips."
+  },
+  {
     "id": "a1-0b7c711e6f",
     "prompt": "the hotel",
     "answer": "das Hotel",
@@ -3088,6 +4033,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Wir übernachten im Hotel.",
     "promptExample": "We are staying overnight in the hotel."
+  },
+  {
+    "id": "a1-7eb70f77a9",
+    "prompt": "the hotels",
+    "answer": "die Hotels",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Hotels in der Stadt sind teuer.",
+    "promptExample": "The hotels in the city are expensive."
   },
   {
     "id": "a1-95403ba7dd",
@@ -3198,6 +4152,15 @@ export const a1Words: Card[] = [
     "promptExample": "I'm going to the doctor's surgery."
   },
   {
+    "id": "a1-ea3838ca05",
+    "prompt": "the doctors' surgeries",
+    "answer": "die Arztpraxen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt viele Arztpraxen hier.",
+    "promptExample": "There are many doctors' surgeries here."
+  },
+  {
     "id": "a1-955f852db6",
     "prompt": "the hospital",
     "answer": "das Krankenhaus",
@@ -3279,6 +4242,15 @@ export const a1Words: Card[] = [
     "promptExample": "I have an allergy to nuts."
   },
   {
+    "id": "a1-7ab1bc7dc7",
+    "prompt": "the allergies",
+    "answer": "die Allergien",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Er hat viele Allergien.",
+    "promptExample": "He has many allergies."
+  },
+  {
     "id": "a1-4bdc1ccf2b",
     "prompt": "the accident",
     "answer": "der Unfall",
@@ -3286,6 +4258,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Es gab einen Unfall.",
     "promptExample": "There was an accident."
+  },
+  {
+    "id": "a1-5e7ef4c045",
+    "prompt": "the accidents",
+    "answer": "die Unfälle",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Auf dieser Straße gibt es viele Unfälle.",
+    "promptExample": "There are many accidents on this road."
   },
   {
     "id": "a1-c02c307668",
@@ -3315,6 +4296,15 @@ export const a1Words: Card[] = [
     "promptExample": "The children go to school."
   },
   {
+    "id": "a1-d9fce3da1e",
+    "prompt": "the schools",
+    "answer": "die Schulen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In dieser Stadt gibt es viele Schulen.",
+    "promptExample": "There are many schools in this city."
+  },
+  {
     "id": "a1-b609c97286",
     "prompt": "the university",
     "answer": "die Universität",
@@ -3322,6 +4312,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich studiere an der Universität.",
     "promptExample": "I study at the university."
+  },
+  {
+    "id": "a1-ff194c2950",
+    "prompt": "the universities",
+    "answer": "die Universitäten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Deutschland hat viele Universitäten.",
+    "promptExample": "Germany has many universities."
   },
   {
     "id": "a1-32c79e8ab7",
@@ -3351,6 +4350,15 @@ export const a1Words: Card[] = [
     "promptExample": "I am doing a German course."
   },
   {
+    "id": "a1-1a4db9238d",
+    "prompt": "the courses",
+    "answer": "die Kurse",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich mache zwei Kurse.",
+    "promptExample": "I am doing two courses."
+  },
+  {
     "id": "a1-1ee07a2a01",
     "prompt": "the lesson / class",
     "answer": "der Unterricht",
@@ -3378,6 +4386,15 @@ export const a1Words: Card[] = [
     "promptExample": "Tomorrow I have an exam."
   },
   {
+    "id": "a1-1795c50b05",
+    "prompt": "the exams / tests",
+    "answer": "die Prüfungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe drei Prüfungen.",
+    "promptExample": "I have three exams."
+  },
+  {
     "id": "a1-d86e35b655",
     "prompt": "the test",
     "answer": "der Test",
@@ -3396,6 +4413,15 @@ export const a1Words: Card[] = [
     "promptExample": "I have a good grade."
   },
   {
+    "id": "a1-7a61951b27",
+    "prompt": "the grades / marks",
+    "answer": "die Noten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Noten sind gut.",
+    "promptExample": "My grades are good."
+  },
+  {
     "id": "a1-514ce73033",
     "prompt": "the exercise / practice",
     "answer": "die Übung",
@@ -3405,6 +4431,15 @@ export const a1Words: Card[] = [
     "promptExample": "This exercise is difficult."
   },
   {
+    "id": "a1-d53b37c004",
+    "prompt": "the exercises / practices",
+    "answer": "die Übungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Übungen sind schwer.",
+    "promptExample": "The exercises are difficult."
+  },
+  {
     "id": "a1-787990aa16",
     "prompt": "the task / exercise",
     "answer": "die Aufgabe",
@@ -3412,6 +4447,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Aufgabe ist einfach.",
     "promptExample": "The task is easy."
+  },
+  {
+    "id": "a1-3fad2becf6",
+    "prompt": "the tasks / exercises",
+    "answer": "die Aufgaben",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich mache alle Aufgaben.",
+    "promptExample": "I do all the tasks."
   },
   {
     "id": "a1-f168dff4dd",
@@ -3450,6 +4494,15 @@ export const a1Words: Card[] = [
     "promptExample": "Write that in the notebook."
   },
   {
+    "id": "a1-9e93a4d661",
+    "prompt": "the notebooks",
+    "answer": "die Hefte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich brauche neue Hefte.",
+    "promptExample": "I need new notebooks."
+  },
+  {
     "id": "a1-bf62a562ec",
     "prompt": "the pen / pencil",
     "answer": "der Stift",
@@ -3459,6 +4512,15 @@ export const a1Words: Card[] = [
     "promptExample": "Do you have a pen?"
   },
   {
+    "id": "a1-b8f9461e01",
+    "prompt": "the pens / pencils",
+    "answer": "die Stifte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe viele Stifte.",
+    "promptExample": "I have many pens."
+  },
+  {
     "id": "a1-71076b1fb0",
     "prompt": "the pencil",
     "answer": "der Bleistift",
@@ -3466,6 +4528,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich schreibe mit dem Bleistift.",
     "promptExample": "I write with the pencil."
+  },
+  {
+    "id": "a1-4532fcf011",
+    "prompt": "the pencils",
+    "answer": "die Bleistifte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Kinder haben Bleistifte.",
+    "promptExample": "The children have pencils."
   },
   {
     "id": "a1-7897bb8b55",
@@ -3585,6 +4656,15 @@ export const a1Words: Card[] = [
     "promptExample": "I work for a large company."
   },
   {
+    "id": "a1-f518108d34",
+    "prompt": "the companies / firms",
+    "answer": "die Firmen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In der Stadt gibt es viele Firmen.",
+    "promptExample": "There are many companies in the city."
+  },
+  {
     "id": "a1-9ddd3520d9",
     "prompt": "the company / business",
     "answer": "das Unternehmen",
@@ -3603,6 +4683,15 @@ export const a1Words: Card[] = [
     "promptExample": "The employee is hard-working."
   },
   {
+    "id": "a1-f06f48a6e1",
+    "prompt": "the employees (male/mixed)",
+    "answer": "die Mitarbeiter",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Das Unternehmen hat 200 Mitarbeiter.",
+    "promptExample": "The company has 200 employees."
+  },
+  {
     "id": "a1-5a9cc01f6a",
     "prompt": "the employee (female)",
     "answer": "die Mitarbeiterin",
@@ -3610,6 +4699,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Mitarbeiterin hat viel Erfahrung.",
     "promptExample": "The employee (female) has a lot of experience."
+  },
+  {
+    "id": "a1-4883a751a5",
+    "prompt": "the employees (female)",
+    "answer": "die Mitarbeiterinnen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Mitarbeiterinnen arbeiten sehr gut.",
+    "promptExample": "The female employees work very well."
   },
   {
     "id": "a1-7d2d30f3df",
@@ -3621,6 +4719,15 @@ export const a1Words: Card[] = [
     "promptExample": "I am applying for a position."
   },
   {
+    "id": "a1-d2fdc210fb",
+    "prompt": "the jobs / positions",
+    "answer": "die Stellen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt viele offene Stellen.",
+    "promptExample": "There are many open positions."
+  },
+  {
     "id": "a1-aadacd2fe9",
     "prompt": "the job advertisement",
     "answer": "die Stellenanzeige",
@@ -3630,6 +4737,15 @@ export const a1Words: Card[] = [
     "promptExample": "I read a job advertisement."
   },
   {
+    "id": "a1-30dae96990",
+    "prompt": "the job advertisements",
+    "answer": "die Stellenanzeigen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich lese viele Stellenanzeigen.",
+    "promptExample": "I read many job advertisements."
+  },
+  {
     "id": "a1-0a74db0027",
     "prompt": "the application (job)",
     "answer": "die Bewerbung",
@@ -3637,6 +4753,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich schreibe eine Bewerbung.",
     "promptExample": "I am writing a job application."
+  },
+  {
+    "id": "a1-70106b675a",
+    "prompt": "the applications (job)",
+    "answer": "die Bewerbungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich schreibe drei Bewerbungen.",
+    "promptExample": "I am writing three job applications."
   },
   {
     "id": "a1-371ea25144",
@@ -3675,6 +4800,15 @@ export const a1Words: Card[] = [
     "promptExample": "I'm taking a break."
   },
   {
+    "id": "a1-7a0eeee889",
+    "prompt": "the breaks",
+    "answer": "die Pausen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir machen zwei Pausen.",
+    "promptExample": "We take two breaks."
+  },
+  {
     "id": "a1-82cfb9b579",
     "prompt": "the meeting",
     "answer": "die Besprechung",
@@ -3682,6 +4816,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich habe eine Besprechung.",
     "promptExample": "I have a meeting."
+  },
+  {
+    "id": "a1-191927602a",
+    "prompt": "the meetings",
+    "answer": "die Besprechungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Heute habe ich drei Besprechungen.",
+    "promptExample": "Today I have three meetings."
   },
   {
     "id": "a1-a7a4da2415",
@@ -3693,6 +4836,15 @@ export const a1Words: Card[] = [
     "promptExample": "Do you have a telephone?"
   },
   {
+    "id": "a1-977b0ebe19",
+    "prompt": "the telephones",
+    "answer": "die Telefone",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir haben zwei Telefone im Büro.",
+    "promptExample": "We have two telephones in the office."
+  },
+  {
     "id": "a1-f3ac401f66",
     "prompt": "the computer",
     "answer": "der Computer",
@@ -3702,6 +4854,15 @@ export const a1Words: Card[] = [
     "promptExample": "I work at the computer."
   },
   {
+    "id": "a1-0e847aace3",
+    "prompt": "the computers",
+    "answer": "die Computer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Im Büro gibt es zehn Computer.",
+    "promptExample": "There are ten computers in the office."
+  },
+  {
     "id": "a1-127818a067",
     "prompt": "the email",
     "answer": "die E-Mail",
@@ -3709,6 +4870,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich schreibe eine E-Mail.",
     "promptExample": "I'm writing an email."
+  },
+  {
+    "id": "a1-f57754736b",
+    "prompt": "the emails",
+    "answer": "die E-Mails",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich beantworte viele E-Mails.",
+    "promptExample": "I answer many emails."
   },
   {
     "id": "a1-c73650855f",
@@ -3754,6 +4924,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich treibe gern Sport.",
     "promptExample": "I like doing sport."
+  },
+  {
+    "id": "a1-86a1dabff0",
+    "prompt": "the types of sport",
+    "answer": "die Sportarten",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt viele Sportarten.",
+    "promptExample": "There are many types of sport."
   },
   {
     "id": "a1-928e73ba1e",
@@ -3891,6 +5070,15 @@ export const a1Words: Card[] = [
     "promptExample": "The museum is interesting."
   },
   {
+    "id": "a1-f51bfba4ad",
+    "prompt": "the museums",
+    "answer": "die Museen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Berlin hat viele Museen.",
+    "promptExample": "Berlin has many museums."
+  },
+  {
     "id": "a1-2003db171a",
     "prompt": "the concert",
     "answer": "das Konzert",
@@ -3898,6 +5086,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Wir gehen zum Konzert.",
     "promptExample": "We're going to the concert."
+  },
+  {
+    "id": "a1-b653fda85c",
+    "prompt": "the concerts",
+    "answer": "die Konzerte",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir gehen zu vielen Konzerten.",
+    "promptExample": "We go to many concerts."
   },
   {
     "id": "a1-cf520047dd",
@@ -3909,6 +5106,15 @@ export const a1Words: Card[] = [
     "promptExample": "The exhibition is very beautiful."
   },
   {
+    "id": "a1-a6cd3cc982",
+    "prompt": "the exhibitions",
+    "answer": "die Ausstellungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Das Museum zeigt tolle Ausstellungen.",
+    "promptExample": "The museum shows great exhibitions."
+  },
+  {
     "id": "a1-32069e5c49",
     "prompt": "the newspaper",
     "answer": "die Zeitung",
@@ -3918,6 +5124,15 @@ export const a1Words: Card[] = [
     "promptExample": "I read the newspaper."
   },
   {
+    "id": "a1-edf657038e",
+    "prompt": "the newspapers",
+    "answer": "die Zeitungen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich lese zwei Zeitungen.",
+    "promptExample": "I read two newspapers."
+  },
+  {
     "id": "a1-2d2a0a1285",
     "prompt": "the magazine",
     "answer": "die Zeitschrift",
@@ -3925,6 +5140,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich lese eine Zeitschrift.",
     "promptExample": "I'm reading a magazine."
+  },
+  {
+    "id": "a1-086115645d",
+    "prompt": "the magazines",
+    "answer": "die Zeitschriften",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich lese viele Zeitschriften.",
+    "promptExample": "I read many magazines."
   },
   {
     "id": "a1-3b82e5841b",
@@ -3981,6 +5205,15 @@ export const a1Words: Card[] = [
     "promptExample": "We are having a party."
   },
   {
+    "id": "a1-bbbd1d5c34",
+    "prompt": "the parties",
+    "answer": "die Partys",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir machen viele Partys.",
+    "promptExample": "We have many parties."
+  },
+  {
     "id": "a1-3196861590",
     "prompt": "the festival / celebration",
     "answer": "das Fest",
@@ -3988,6 +5221,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Wir feiern ein Fest.",
     "promptExample": "We are celebrating a festival."
+  },
+  {
+    "id": "a1-b32f7a4a06",
+    "prompt": "the festivals / celebrations",
+    "answer": "die Feste",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Im Sommer gibt es viele Feste.",
+    "promptExample": "In summer there are many festivals."
   },
   {
     "id": "a1-b54d68448b",
@@ -4008,6 +5250,15 @@ export const a1Words: Card[] = [
     "promptExample": "The temperature is fifteen degrees."
   },
   {
+    "id": "a1-88a0d6fef2",
+    "prompt": "the temperatures",
+    "answer": "die Temperaturen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Temperaturen steigen.",
+    "promptExample": "The temperatures are rising."
+  },
+  {
     "id": "a1-fecd7b9d65",
     "prompt": "the degree",
     "answer": "der Grad",
@@ -4015,6 +5266,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Es sind zwanzig Grad.",
     "promptExample": "It is twenty degrees."
+  },
+  {
+    "id": "a1-98ccdb3b8e",
+    "prompt": "the degrees",
+    "answer": "die Grad",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Temperaturen steigen auf dreißig Grad.",
+    "promptExample": "The temperatures rise to thirty degrees."
   },
   {
     "id": "a1-723b76fa5f",
@@ -4197,6 +5457,15 @@ export const a1Words: Card[] = [
     "promptExample": "I live in a small village."
   },
   {
+    "id": "a1-bc42a5587b",
+    "prompt": "the villages",
+    "answer": "die Dörfer",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In Bayern gibt es viele kleine Dörfer.",
+    "promptExample": "In Bavaria there are many small villages."
+  },
+  {
     "id": "a1-566e3e9d3b",
     "prompt": "the centre / downtown",
     "answer": "das Zentrum",
@@ -4224,6 +5493,15 @@ export const a1Words: Card[] = [
     "promptExample": "I live next to the square."
   },
   {
+    "id": "a1-ee93d9c3a2",
+    "prompt": "the squares / spaces",
+    "answer": "die Plätze",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Plätze in der Stadt sind schön.",
+    "promptExample": "The squares in the city are beautiful."
+  },
+  {
     "id": "a1-782b41bd1d",
     "prompt": "the bridge",
     "answer": "die Brücke",
@@ -4233,6 +5511,15 @@ export const a1Words: Card[] = [
     "promptExample": "We walk over the bridge."
   },
   {
+    "id": "a1-1f5224b765",
+    "prompt": "the bridges",
+    "answer": "die Brücken",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Stadt hat viele Brücken.",
+    "promptExample": "The city has many bridges."
+  },
+  {
     "id": "a1-d8330645a4",
     "prompt": "the park",
     "answer": "der Park",
@@ -4240,6 +5527,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich gehe im Park spazieren.",
     "promptExample": "I go for a walk in the park."
+  },
+  {
+    "id": "a1-6852ae5ff4",
+    "prompt": "the parks",
+    "answer": "die Parks",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Stadt hat viele Parks.",
+    "promptExample": "The city has many parks."
   },
   {
     "id": "a1-860145ba1b",
@@ -4267,6 +5563,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Die Kirche ist alt und schön.",
     "promptExample": "The church is old and beautiful."
+  },
+  {
+    "id": "a1-c74072bc02",
+    "prompt": "the churches",
+    "answer": "die Kirchen",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In der Altstadt gibt es viele Kirchen.",
+    "promptExample": "In the old town there are many churches."
   },
   {
     "id": "a1-955f852db6",
@@ -4314,6 +5619,15 @@ export const a1Words: Card[] = [
     "promptExample": "I borrow books from the library."
   },
   {
+    "id": "a1-b2203e9c68",
+    "prompt": "the libraries",
+    "answer": "die Bibliotheken",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt zwei Bibliotheken hier.",
+    "promptExample": "There are two libraries here."
+  },
+  {
     "id": "a1-0dc069c92c",
     "prompt": "the swimming pool",
     "answer": "das Schwimmbad",
@@ -4330,6 +5644,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Wir treffen uns im Café.",
     "promptExample": "We meet in the café."
+  },
+  {
+    "id": "a1-72ffe5b425",
+    "prompt": "the cafés",
+    "answer": "die Cafés",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "In der Innenstadt gibt es viele Cafés.",
+    "promptExample": "In the city centre there are many cafés."
   },
   {
     "id": "a1-29385d2087",
@@ -4357,6 +5680,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich kaufe Brot in der Bäckerei.",
     "promptExample": "I buy bread at the bakery."
+  },
+  {
+    "id": "a1-0edf7eb185",
+    "prompt": "the bakeries",
+    "answer": "die Bäckereien",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Es gibt drei Bäckereien in der Straße.",
+    "promptExample": "There are three bakeries on the street."
   },
   {
     "id": "a1-6b09d55db9",
@@ -4449,6 +5781,15 @@ export const a1Words: Card[] = [
     "promptExample": "We are having a conversation."
   },
   {
+    "id": "a1-2e7461560c",
+    "prompt": "the conversations",
+    "answer": "die Gespräche",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wir hatten viele Gespräche.",
+    "promptExample": "We had many conversations."
+  },
+  {
     "id": "a1-e465c730c0",
     "prompt": "the message / news",
     "answer": "die Nachricht",
@@ -4483,6 +5824,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Mein Handy ist kaputt.",
     "promptExample": "My mobile phone is broken."
+  },
+  {
+    "id": "a1-c15c986fe1",
+    "prompt": "the mobile phones",
+    "answer": "die Handys",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Alle Kinder haben Handys.",
+    "promptExample": "All children have mobile phones."
   },
   {
     "id": "a1-f01c1b1108",
@@ -5988,6 +7338,15 @@ export const a1Words: Card[] = [
     "promptExample": "The shoulder is injured."
   },
   {
+    "id": "a1-03bec13768",
+    "prompt": "the shoulders",
+    "answer": "die Schultern",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Die Schultern tun weh.",
+    "promptExample": "The shoulders hurt."
+  },
+  {
     "id": "a1-0f1ae6ca48",
     "prompt": "the arm",
     "answer": "der Arm",
@@ -5995,6 +7354,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Ich habe meinen Arm gebrochen.",
     "promptExample": "I broke my arm."
+  },
+  {
+    "id": "a1-a9227bfa6b",
+    "prompt": "the arms",
+    "answer": "die Arme",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Arme sind müde.",
+    "promptExample": "My arms are tired."
   },
   {
     "id": "a1-4d3512cfd7",
@@ -6006,6 +7374,15 @@ export const a1Words: Card[] = [
     "promptExample": "Give me your hand."
   },
   {
+    "id": "a1-593ac62295",
+    "prompt": "the hands",
+    "answer": "die Hände",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Wasch deine Hände!",
+    "promptExample": "Wash your hands!"
+  },
+  {
     "id": "a1-28f308da3d",
     "prompt": "the finger",
     "answer": "der Finger",
@@ -6015,6 +7392,15 @@ export const a1Words: Card[] = [
     "promptExample": "I hurt my finger."
   },
   {
+    "id": "a1-c8171da271",
+    "prompt": "the fingers",
+    "answer": "die Finger",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Ich habe zehn Finger.",
+    "promptExample": "I have ten fingers."
+  },
+  {
     "id": "a1-98519cb2db",
     "prompt": "the leg",
     "answer": "das Bein",
@@ -6022,6 +7408,15 @@ export const a1Words: Card[] = [
     "type": "word",
     "answerExample": "Das Bein tut weh.",
     "promptExample": "The leg hurts."
+  },
+  {
+    "id": "a1-ca4993a21d",
+    "prompt": "the legs",
+    "answer": "die Beine",
+    "level": "A1",
+    "type": "word",
+    "answerExample": "Meine Beine sind müde.",
+    "promptExample": "My legs are tired."
   },
   {
     "id": "a1-9911202c6c",

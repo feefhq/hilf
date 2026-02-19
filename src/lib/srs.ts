@@ -1,42 +1,78 @@
-import { supermemo } from 'supermemo';
 import type { CardState } from '../vocabulary/types';
+
+/** Retained for FeedbackButtons compatibility: 5 = correct, 4 = correct but hard, 2 = incorrect */
+export type Quality = 5 | 4 | 2;
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
-/** Grade 5 = correct, 4 = correct but hard, 2 = incorrect */
-export type Quality = 5 | 4 | 2;
+const LEARNED_INTERVAL = 14;
+const MIN_EASE = 1.3;
 
-export function applySm2(
-  state: CardState,
-  quality: Quality
-): Omit<CardState, 'cardId'> {
-  const result = supermemo(
-    {
-      interval: state.interval,
-      repetition: state.repetitions,
-      efactor: state.easeFactor,
-    },
-    quality
-  );
+export function applyReview(state: CardState, correct: boolean): CardState {
   const now = Date.now();
-  let nextReview = now + result.interval * MS_PER_DAY;
-  if (quality === 2) {
-    nextReview = Math.max(nextReview, now + MS_PER_DAY);
+  let { repetitions, interval, easeFactor, correctStreak, totalCorrect, totalSeen, status } = state;
+
+  totalSeen += 1;
+
+  if (correct) {
+    totalCorrect += 1;
+    correctStreak += 1;
+    repetitions += 1;
+
+    if (repetitions === 1) {
+      interval = 1;
+    } else if (repetitions === 2) {
+      interval = 3;
+    } else {
+      interval = Math.round(interval * easeFactor);
+    }
+
+    easeFactor = Math.max(MIN_EASE, easeFactor + 0.1);
+  } else {
+    correctStreak = 0;
+    repetitions = Math.max(1, repetitions - 1);
+    interval = 1;
+    easeFactor = Math.max(MIN_EASE, easeFactor - 0.2);
+
+    // Demote learned card back to practicing
+    if (status === 'learned') {
+      status = 'practicing';
+      repetitions = 1;
+      correctStreak = 0;
+    }
   }
+
+  // Promote practicing card to learned
+  if (status === 'practicing' && correct && interval >= LEARNED_INTERVAL) {
+    status = 'learned';
+  }
+
+  const nextDue = now + interval * MS_PER_DAY;
+
   return {
-    repetitions: result.repetition,
-    easeFactor: result.efactor,
-    interval: result.interval,
-    nextReview,
+    ...state,
+    status,
+    interval,
+    easeFactor,
+    repetitions,
+    correctStreak,
+    totalCorrect,
+    totalSeen,
+    lastReviewed: now,
+    nextDue,
   };
 }
 
-export function createInitialState(cardId: string): CardState {
+export function createInitialState(): CardState {
   return {
-    cardId,
-    repetitions: 0,
-    easeFactor: 2.5,
+    status: 'practicing',
     interval: 0,
-    nextReview: 0,
+    easeFactor: 2.5,
+    repetitions: 0,
+    lastReviewed: null,
+    nextDue: null,
+    correctStreak: 0,
+    totalCorrect: 0,
+    totalSeen: 0,
   };
 }
