@@ -24,9 +24,6 @@ export default function App() {
   const { states, updateState } = useCardStates();
   const [revealed, setRevealed] = useState(false);
 
-  // Session-level new card counter — not persisted, resets each app open
-  const [sessionNewCardCount, setSessionNewCardCount] = useState(0);
-
   // Current deck
   const [currentDeck, setCurrentDeck] = useState<Card[]>([]);
   const [deckIndex, setDeckIndex] = useState(0);
@@ -99,24 +96,10 @@ export default function App() {
     [currentCard, deckIndex, currentDeck.length, states, updateState]
   );
 
-  // When a new card appears for the first time, increment session new-card count
-  // (state is persisted only on first review in handleFeedback, not on show)
-  useEffect(() => {
-    if (phase !== 'playing' || !currentCard) return;
-    const s = states[currentCard.id];
-    if (!s || s.status === 'new') {
-      setSessionNewCardCount((n) => n + 1);
-    }
-    // Only run when the current card changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCard?.id, phase]);
-
   const handleContinue = useCallback(() => {
-    // states may be stale here; we need the latest from localStorage
-    // Because React batches updates, we pass sessionNewCardCount as captured
-    // but use a functional read for the actual states via the hook's closure.
-    startDeck(states, sessionNewCardCount);
-  }, [startDeck, states, sessionNewCardCount]);
+    // Use 0 so the next deck can include new cards (up to MAX_NEW_PER_SESSION per deck).
+    startDeck(states, 0);
+  }, [startDeck, states]);
 
   const handleStop = useCallback(() => {
     setPhase('nothing-due');
