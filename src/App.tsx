@@ -99,13 +99,12 @@ export default function App() {
     [currentCard, deckIndex, currentDeck.length, states, updateState]
   );
 
-  // When a new card appears for the first time, immediately mark it practicing
+  // When a new card appears for the first time, increment session new-card count
+  // (state is persisted only on first review in handleFeedback, not on show)
   useEffect(() => {
     if (phase !== 'playing' || !currentCard) return;
     const s = states[currentCard.id];
     if (!s || s.status === 'new') {
-      const init = createInitialState();
-      updateState(currentCard.id, init);
       setSessionNewCardCount((n) => n + 1);
     }
     // Only run when the current card changes
