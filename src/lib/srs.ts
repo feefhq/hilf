@@ -3,9 +3,11 @@ import type { CardState } from '../vocabulary/types';
 /** Retained for FeedbackButtons compatibility: 5 = correct, 4 = correct but hard, 2 = incorrect */
 export type Quality = 5 | 4 | 2;
 
-const MS_PER_DAY = 24 * 60 * 60 * 1000;
+const DEFAULT_MS_PER_INTERVAL = 4 * 60 * 60 * 1000;
+const MS_PER_INTERVAL =
+  Number(import.meta.env.VITE_MS_PER_INTERVAL) || DEFAULT_MS_PER_INTERVAL;
 
-const LEARNED_INTERVAL = 14;
+const LEARNED_INTERVAL = 3;
 const MIN_EASE = 1.3;
 
 export function applyReview(state: CardState, correct: boolean): CardState {
@@ -47,7 +49,7 @@ export function applyReview(state: CardState, correct: boolean): CardState {
     status = 'learned';
   }
 
-  const nextDue = now + interval * MS_PER_DAY;
+  const nextDue = now + interval * MS_PER_INTERVAL;
 
   return {
     ...state,
