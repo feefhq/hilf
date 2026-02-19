@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prebuild": "node scripts/parse-a1-vocab.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
