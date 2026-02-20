@@ -12,7 +12,8 @@
  * - phase: drives which screen is shown (playing vs deck-summary vs nothing-due).
  *
  * **Effects**
- * - On mount: one-time effect builds the initial deck from persisted states (startDeck(states, 0)) and sets phase to "playing" or "nothing-due".
+ * - Intro: if there is no persisted data (no card states and intro not yet dismissed), we show IntroScreen; first deck build is gated until after the user dismisses it.
+ * - After intro (or when already past intro): one-time effect builds the initial deck from persisted states (startDeck(states, 0)) and sets phase to "playing" or "nothing-due".
  * - Keyboard listener: when phase === "playing", Space reveals, 1 = correct, 2 = incorrect; listener is re-attached when phase/revealed/currentCard/handlers change.
  *
  * **Session new-card cap**
@@ -22,8 +23,10 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { CardView } from "./components/CardView"
 import { DeckSummary } from "./components/DeckSummary"
 import { FeedbackButtons } from "./components/FeedbackButtons"
+import { IntroScreen } from "./components/IntroScreen"
 import { NothingDue } from "./components/NothingDue"
 import { useCardStates } from "./hooks/useLocalStorage"
+import { useOnboarding } from "./hooks/useOnboarding"
 import { buildDeck, getNextDueTimestamp } from "./lib/scheduler"
 import { applyReview, createInitialState } from "./lib/srs"
 import { a1Cards } from "./vocabulary/a1"
@@ -43,6 +46,12 @@ const TOTAL_CARDS = ALL_CARDS.length
 
 const App = () => {
   const { states, updateState } = useCardStates()
+  const { seenIntro, markIntroSeen } = useOnboarding()
+
+  const hasAnyPersistedData =
+    Object.keys(states).length > 0 || seenIntro
+  const showIntro = !hasAnyPersistedData
+
   /** Whether the current card's answer is revealed (user can then give feedback). */
   const [revealed, setRevealed] = useState(false)
 
@@ -93,16 +102,15 @@ const App = () => {
   )
 
   /**
-   * Effect: run once on mount. Builds the initial deck from persisted states (startDeck(states, 0)).
-   * If the deck is empty, phase becomes "nothing-due"; otherwise "playing". Uses initialised flag so it only runs once; dependencies omitted intentionally.
+   * Effect: run once after the intro is dismissed. Builds the initial deck from persisted states (startDeck(states, 0)).
+   * If the deck is empty, phase becomes "nothing-due"; otherwise "playing". Gated on !showIntro so we don't build until the user has seen the intro.
    */
   const [initialised, setInitialised] = useState(false)
-  // biome-ignore lint/correctness/useExhaustiveDependencies: run once on mount to build initial deck from localStorage
   useEffect(() => {
-    if (initialised) return
+    if (showIntro || initialised) return
     setInitialised(true)
     startDeck(states, 0)
-  }, [])
+  }, [showIntro, initialised, states, startDeck])
 
   const currentCard =
     phase === "playing" ? (currentDeck[deckIndex] ?? null) : null
@@ -177,6 +185,10 @@ const App = () => {
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [phase, revealed, currentCard, handleReveal, handleFeedback])
+
+  if (showIntro) {
+    return <IntroScreen onGetStarted={markIntroSeen} />
+  }
 
   // Phase-based render: deck-summary → nothing-due or no card → playing
   if (phase === "deck-summary") {

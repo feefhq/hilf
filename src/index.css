@@ -12,3 +12,8 @@
   line-height: 1.5;
   color-scheme: light dark;
 }
+
+/* Avoid single words on the last line of paragraphs (orphans) */
+p {
+  text-wrap: pretty;
+}
