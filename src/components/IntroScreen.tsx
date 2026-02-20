@@ -1,10 +1,13 @@
+import { AppFooter } from "./AppFooter"
+
 interface IntroScreenProps {
   onGetStarted: () => void
 }
 
 export const IntroScreen = ({ onGetStarted }: IntroScreenProps) => {
   return (
-    <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center p-4 gap-8">
+    <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col p-4">
+      <div className="flex-1 flex flex-col items-center justify-center gap-8">
       <div className="text-center max-w-sm space-y-4">
         <div className="space-y-1">
           <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200">
@@ -42,6 +45,8 @@ export const IntroScreen = ({ onGetStarted }: IntroScreenProps) => {
           What is spaced repetition?
         </a>
       </div>
+      </div>
+      <AppFooter />
     </div>
   )
 }

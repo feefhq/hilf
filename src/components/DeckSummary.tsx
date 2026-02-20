@@ -1,3 +1,5 @@
+import { AppFooter } from "./AppFooter"
+
 interface DeckSummaryProps {
   stats: {
     total: number
@@ -15,7 +17,8 @@ export const DeckSummary = ({
   onContinue,
   onStop,
 }: DeckSummaryProps) => (
-  <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center p-4">
+  <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col p-4">
+    <div className="flex-1 flex items-center justify-center">
     <div className="w-full max-w-sm flex flex-col items-center gap-8">
       <div className="text-center">
         <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
@@ -61,5 +64,7 @@ export const DeckSummary = ({
         </button>
       </div>
     </div>
+    </div>
+    <AppFooter />
   </div>
 )

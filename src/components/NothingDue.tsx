@@ -1,3 +1,5 @@
+import { AppFooter } from "./AppFooter"
+
 const formatNextDue = (timestamp: number): string => {
   const now = Date.now()
   const diffMs = timestamp - now
@@ -26,7 +28,8 @@ export const NothingDue = ({
   totalCount,
 }: NothingDueProps) => {
   return (
-    <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center p-4 gap-6">
+    <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col p-4">
+      <div className="flex-1 flex flex-col items-center justify-center gap-6">
       <div className="text-center max-w-sm">
         <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-3">
           You're all caught up!
@@ -53,6 +56,8 @@ export const NothingDue = ({
           words learned
         </p>
       </div>
+      </div>
+      <AppFooter />
     </div>
   )
 }
