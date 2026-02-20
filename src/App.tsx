@@ -24,7 +24,7 @@ import { DeckSummary } from "./components/DeckSummary"
 import { FeedbackButtons } from "./components/FeedbackButtons"
 import { NothingDue } from "./components/NothingDue"
 import { useCardStates } from "./hooks/useLocalStorage"
-import { buildDeck, getNextDueTimestamp, getTotalAvailable } from "./lib/scheduler"
+import { buildDeck, getNextDueTimestamp } from "./lib/scheduler"
 import { applyReview, createInitialState } from "./lib/srs"
 import { a1Cards } from "./vocabulary/a1"
 import type { Card, CardState } from "./vocabulary/types"
@@ -180,7 +180,7 @@ const App = () => {
 
   // Phase-based render: deck-summary → nothing-due or no card → playing
   if (phase === "deck-summary") {
-    const totalAvailableResult = getTotalAvailable(ALL_CARDS, states)
+    const nextDeck = buildDeck(ALL_CARDS, states, 0)
     return (
       <DeckSummary
         stats={{
@@ -188,7 +188,7 @@ const App = () => {
           correct: deckStats.correct,
           incorrect: deckStats.incorrect,
         }}
-        totalAvailable={totalAvailableResult.total}
+        nextDeckSize={nextDeck.deck.length}
         onContinue={handleContinue}
         onStop={handleStop}
       />

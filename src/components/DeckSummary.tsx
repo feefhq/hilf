@@ -4,14 +4,14 @@ interface DeckSummaryProps {
     correct: number
     incorrect: number
   }
-  totalAvailable?: number
+  nextDeckSize: number
   onContinue: () => void
   onStop: () => void
 }
 
 export const DeckSummary = ({
   stats,
-  totalAvailable,
+  nextDeckSize,
   onContinue,
   onStop,
 }: DeckSummaryProps) => (
@@ -24,12 +24,6 @@ export const DeckSummary = ({
         <p className="text-neutral-500 dark:text-neutral-400 text-sm">
           {stats.total} card{stats.total !== 1 ? "s" : ""} reviewed
         </p>
-        {totalAvailable != null && (
-          <p className="text-neutral-500 dark:text-neutral-400 text-sm mt-0.5">
-            {totalAvailable} card{totalAvailable !== 1 ? "s" : ""} available to
-            study
-          </p>
-        )}
       </div>
 
       <div className="w-full flex gap-4 justify-center">
@@ -48,6 +42,9 @@ export const DeckSummary = ({
       </div>
 
       <div className="w-full flex flex-col gap-3">
+        <p className="text-center text-sm text-neutral-500 dark:text-neutral-400">
+          {nextDeckSize} card{nextDeckSize !== 1 ? "s" : ""} in your next deck
+        </p>
         <button
           type="button"
           onClick={onContinue}
