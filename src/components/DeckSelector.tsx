@@ -1,12 +1,16 @@
-import type { Deck } from '../vocabulary/types';
+import type { Deck } from "../vocabulary/types"
 
 interface DeckSelectorProps {
-  decks: Deck[];
-  selectedId: string;
-  onSelect: (id: string) => void;
+  decks: Deck[]
+  selectedId: string
+  onSelect: (id: string) => void
 }
 
-export function DeckSelector({ decks, selectedId, onSelect }: DeckSelectorProps) {
+export function DeckSelector({
+  decks,
+  selectedId,
+  onSelect,
+}: DeckSelectorProps) {
   return (
     <select
       value={selectedId}
@@ -19,5 +23,5 @@ export function DeckSelector({ decks, selectedId, onSelect }: DeckSelectorProps)
         </option>
       ))}
     </select>
-  );
+  )
 }

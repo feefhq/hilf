@@ -1,139 +1,153 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
-import { a1Cards } from './vocabulary/a1';
-import { CardView } from './components/CardView';
-import { FeedbackButtons } from './components/FeedbackButtons';
-import { DeckSummary } from './components/DeckSummary';
-import { NothingDue } from './components/NothingDue';
-import { useCardStates } from './hooks/useLocalStorage';
-import { buildDeck } from './lib/scheduler';
-import { getNextDueTimestamp } from './lib/scheduler';
-import { applyReview, createInitialState } from './lib/srs';
-import type { Card, CardState } from './vocabulary/types';
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { CardView } from "./components/CardView"
+import { DeckSummary } from "./components/DeckSummary"
+import { FeedbackButtons } from "./components/FeedbackButtons"
+import { NothingDue } from "./components/NothingDue"
+import { useCardStates } from "./hooks/useLocalStorage"
+import { buildDeck, getNextDueTimestamp } from "./lib/scheduler"
+import { applyReview, createInitialState } from "./lib/srs"
+import { a1Cards } from "./vocabulary/a1"
+import type { Card, CardState } from "./vocabulary/types"
 
-type SessionPhase = 'playing' | 'deck-summary' | 'nothing-due';
+type SessionPhase = "playing" | "deck-summary" | "nothing-due"
 
 interface DeckStats {
-  correct: number;
-  incorrect: number;
+  correct: number
+  incorrect: number
 }
 
-const ALL_CARDS: Card[] = a1Cards['a1-words'] ?? [];
-const TOTAL_CARDS = ALL_CARDS.length;
+const ALL_CARDS: Card[] = a1Cards["a1-words"] ?? []
+const TOTAL_CARDS = ALL_CARDS.length
 
 export default function App() {
-  const { states, updateState } = useCardStates();
-  const [revealed, setRevealed] = useState(false);
+  const { states, updateState } = useCardStates()
+  const [revealed, setRevealed] = useState(false)
 
   // Current deck
-  const [currentDeck, setCurrentDeck] = useState<Card[]>([]);
-  const [deckIndex, setDeckIndex] = useState(0);
-  const [deckStats, setDeckStats] = useState<DeckStats>({ correct: 0, incorrect: 0 });
-  const [phase, setPhase] = useState<SessionPhase>('playing');
+  const [currentDeck, setCurrentDeck] = useState<Card[]>([])
+  const [deckIndex, setDeckIndex] = useState(0)
+  const [deckStats, setDeckStats] = useState<DeckStats>({
+    correct: 0,
+    incorrect: 0,
+  })
+  const [phase, setPhase] = useState<SessionPhase>("playing")
 
   const learnedCount = useMemo(
-    () => Object.values(states).filter((s) => s.status === 'learned').length,
-    [states]
-  );
+    () => Object.values(states).filter((s) => s.status === "learned").length,
+    [states],
+  )
 
-  const nextDueAt = useMemo(() => getNextDueTimestamp(states), [states]);
+  const nextDueAt = useMemo(() => getNextDueTimestamp(states), [states])
 
   // Build a fresh deck, using the latest states ref to avoid stale closures
   const startDeck = useCallback(
     (latestStates: typeof states, latestSessionNewCount: number) => {
-      const { deck, introducedNewCount } = buildDeck(ALL_CARDS, latestStates, latestSessionNewCount);
+      const { deck, introducedNewCount } = buildDeck(
+        ALL_CARDS,
+        latestStates,
+        latestSessionNewCount,
+      )
 
       if (deck.length === 0) {
-        setPhase('nothing-due');
-        return { deck, introducedNewCount };
+        setPhase("nothing-due")
+        return { deck, introducedNewCount }
       }
 
-      setCurrentDeck(deck);
-      setDeckIndex(0);
-      setDeckStats({ correct: 0, incorrect: 0 });
-      setRevealed(false);
-      setPhase('playing');
-      return { deck, introducedNewCount };
+      setCurrentDeck(deck)
+      setDeckIndex(0)
+      setDeckStats({ correct: 0, incorrect: 0 })
+      setRevealed(false)
+      setPhase("playing")
+      return { deck, introducedNewCount }
     },
-    []
-  );
+    [],
+  )
 
   // Build the initial deck on mount. We need to use a ref-stable snapshot of
   // states from the hook since states is initialised synchronously from localStorage.
-  const [initialised, setInitialised] = useState(false);
+  const [initialised, setInitialised] = useState(false)
+  // biome-ignore lint/correctness/useExhaustiveDependencies: run once on mount to build initial deck from localStorage
   useEffect(() => {
-    if (initialised) return;
-    setInitialised(true);
-    startDeck(states, 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (initialised) return
+    setInitialised(true)
+    startDeck(states, 0)
+  }, [])
 
-  const currentCard = phase === 'playing' ? currentDeck[deckIndex] ?? null : null;
+  const currentCard =
+    phase === "playing" ? (currentDeck[deckIndex] ?? null) : null
 
-  const handleReveal = useCallback(() => setRevealed(true), []);
+  const handleReveal = useCallback(() => setRevealed(true), [])
 
   const handleFeedback = useCallback(
     (correct: boolean) => {
-      if (!currentCard) return;
+      if (!currentCard) return
 
-      const existingState: CardState = states[currentCard.id] ?? createInitialState();
-      const nextState = applyReview(existingState, correct);
-      updateState(currentCard.id, nextState);
+      const existingState: CardState =
+        states[currentCard.id] ?? createInitialState()
+      const nextState = applyReview(existingState, correct)
+      updateState(currentCard.id, nextState)
 
       setDeckStats((prev) => ({
         correct: prev.correct + (correct ? 1 : 0),
         incorrect: prev.incorrect + (correct ? 0 : 1),
-      }));
+      }))
 
-      setRevealed(false);
+      setRevealed(false)
 
-      const nextIndex = deckIndex + 1;
+      const nextIndex = deckIndex + 1
       if (nextIndex >= currentDeck.length) {
-        setPhase('deck-summary');
+        setPhase("deck-summary")
       } else {
-        setDeckIndex(nextIndex);
+        setDeckIndex(nextIndex)
       }
     },
-    [currentCard, deckIndex, currentDeck.length, states, updateState]
-  );
+    [currentCard, deckIndex, currentDeck.length, states, updateState],
+  )
 
   const handleContinue = useCallback(() => {
     // Use 0 so the next deck can include new cards (up to MAX_NEW_PER_SESSION per deck).
-    startDeck(states, 0);
-  }, [startDeck, states]);
+    startDeck(states, 0)
+  }, [startDeck, states])
 
   const handleStop = useCallback(() => {
-    setPhase('nothing-due');
-  }, []);
+    setPhase("nothing-due")
+  }, [])
 
   // Keyboard shortcuts
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.repeat) return;
-      if (phase !== 'playing') return;
-      if (e.key === ' ') {
-        e.preventDefault();
-        if (!revealed) handleReveal();
-        return;
+      if (e.repeat) return
+      if (phase !== "playing") return
+      if (e.key === " ") {
+        e.preventDefault()
+        if (!revealed) handleReveal()
+        return
       }
-      if (!revealed || !currentCard) return;
-      if (e.key === '1') { handleFeedback(true); return; }
-      if (e.key === '2') { handleFeedback(false); return; }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [phase, revealed, currentCard, handleReveal, handleFeedback]);
+      if (!revealed || !currentCard) return
+      if (e.key === "1") {
+        handleFeedback(true)
+        return
+      }
+      if (e.key === "2") {
+        handleFeedback(false)
+        return
+      }
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [phase, revealed, currentCard, handleReveal, handleFeedback])
 
-  if (phase === 'nothing-due') {
+  if (phase === "nothing-due") {
     return (
       <NothingDue
         nextDueAt={nextDueAt}
         learnedCount={learnedCount}
         totalCount={TOTAL_CARDS}
       />
-    );
+    )
   }
 
-  if (phase === 'deck-summary') {
+  if (phase === "deck-summary") {
     return (
       <DeckSummary
         stats={{
@@ -144,7 +158,7 @@ export default function App() {
         onContinue={handleContinue}
         onStop={handleStop}
       />
-    );
+    )
   }
 
   if (!currentCard) {
@@ -154,7 +168,7 @@ export default function App() {
         learnedCount={learnedCount}
         totalCount={TOTAL_CARDS}
       />
-    );
+    )
   }
 
   return (
@@ -191,7 +205,9 @@ export default function App() {
       <footer className="py-4 px-4 flex flex-col items-center gap-2">
         <div className="w-full max-w-sm">
           <div className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 mb-1">
-            <span>{learnedCount} of {TOTAL_CARDS} words learned</span>
+            <span>
+              {learnedCount} of {TOTAL_CARDS} words learned
+            </span>
             <span>{Math.round((learnedCount / TOTAL_CARDS) * 100)}%</span>
           </div>
           <div className="w-full h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
@@ -203,5 +219,5 @@ export default function App() {
         </div>
       </footer>
     </div>
-  );
+  )
 }

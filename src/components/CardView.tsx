@@ -1,28 +1,28 @@
-import type { Card } from '../vocabulary/types';
+import type { Card } from "../vocabulary/types"
 
 interface CardViewProps {
-  card: Card;
-  revealed: boolean;
-  onReveal: () => void;
+  card: Card
+  revealed: boolean
+  onReveal: () => void
 }
 
 /** Fallback when card has no separate example fields (e.g. legacy tab/em-dash in prompt/answer). */
 function parseParts(text: string): { primary: string; example: string | null } {
-  const sep = text.includes('\t') ? '\t' : ' — ';
-  const idx = text.indexOf(sep);
-  if (idx < 0) return { primary: text, example: null };
+  const sep = text.includes("\t") ? "\t" : " — "
+  const idx = text.indexOf(sep)
+  if (idx < 0) return { primary: text, example: null }
   return {
     primary: text.slice(0, idx).trim(),
     example: text.slice(idx + sep.length).trim() || null,
-  };
+  }
 }
 
 function CardContent({
   primary,
   example,
 }: {
-  primary: string;
-  example: string | null;
+  primary: string
+  example: string | null
 }) {
   return (
     <div className="text-center">
@@ -35,16 +35,18 @@ function CardContent({
         </p>
       )}
     </div>
-  );
+  )
 }
 
 export function CardView({ card, revealed, onReveal }: CardViewProps) {
   const promptPrimary =
-    card.promptExample != null ? card.prompt : parseParts(card.prompt).primary;
-  const promptExample = card.promptExample ?? parseParts(card.prompt).example ?? null;
+    card.promptExample != null ? card.prompt : parseParts(card.prompt).primary
+  const promptExample =
+    card.promptExample ?? parseParts(card.prompt).example ?? null
   const answerPrimary =
-    card.answerExample != null ? card.answer : parseParts(card.answer).primary;
-  const answerExample = card.answerExample ?? parseParts(card.answer).example ?? null;
+    card.answerExample != null ? card.answer : parseParts(card.answer).primary
+  const answerExample =
+    card.answerExample ?? parseParts(card.answer).example ?? null
 
   return (
     <div className="rounded-xl bg-white dark:bg-neutral-800 shadow-lg p-8 min-h-[20rem] flex flex-col items-center">
@@ -60,6 +62,7 @@ export function CardView({ card, revealed, onReveal }: CardViewProps) {
         </div>
       ) : (
         <button
+          type="button"
           onClick={onReveal}
           className="mt-2 px-5 py-2.5 rounded-lg bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-500 text-neutral-800 dark:text-neutral-200 font-medium transition-colors inline-flex items-center gap-2"
         >
@@ -70,5 +73,5 @@ export function CardView({ card, revealed, onReveal }: CardViewProps) {
         </button>
       )}
     </div>
-  );
+  )
 }

@@ -1,11 +1,11 @@
 interface DeckSummaryProps {
   stats: {
-    total: number;
-    correct: number;
-    incorrect: number;
-  };
-  onContinue: () => void;
-  onStop: () => void;
+    total: number
+    correct: number
+    incorrect: number
+  }
+  onContinue: () => void
+  onStop: () => void
 }
 
 export function DeckSummary({ stats, onContinue, onStop }: DeckSummaryProps) {
@@ -17,29 +17,37 @@ export function DeckSummary({ stats, onContinue, onStop }: DeckSummaryProps) {
             Deck complete
           </h2>
           <p className="text-neutral-500 dark:text-neutral-400 text-sm">
-            {stats.total} card{stats.total !== 1 ? 's' : ''} reviewed
+            {stats.total} card{stats.total !== 1 ? "s" : ""} reviewed
           </p>
         </div>
 
         <div className="w-full flex gap-4 justify-center">
           <div className="flex-1 rounded-2xl bg-white dark:bg-neutral-800 p-5 text-center shadow-sm">
-            <p className="text-3xl font-bold text-emerald-500">{stats.correct}</p>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">Correct</p>
+            <p className="text-3xl font-bold text-emerald-500">
+              {stats.correct}
+            </p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+              Correct
+            </p>
           </div>
           <div className="flex-1 rounded-2xl bg-white dark:bg-neutral-800 p-5 text-center shadow-sm">
             <p className="text-3xl font-bold text-red-400">{stats.incorrect}</p>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">Incorrect</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+              Incorrect
+            </p>
           </div>
         </div>
 
         <div className="w-full flex flex-col gap-3">
           <button
+            type="button"
             onClick={onContinue}
             className="w-full px-6 py-3 rounded-xl bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 font-medium hover:opacity-90 transition-opacity"
           >
             Continue
           </button>
           <button
+            type="button"
             onClick={onStop}
             className="w-full px-6 py-3 rounded-xl bg-transparent border border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 font-medium hover:opacity-70 transition-opacity"
           >
@@ -48,5 +56,5 @@ export function DeckSummary({ stats, onContinue, onStop }: DeckSummaryProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }
