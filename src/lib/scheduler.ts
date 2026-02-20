@@ -4,6 +4,7 @@
  * Responsibilities:
  * - **buildDeck**: Assembles the next batch of cards to study (up to DECK_SIZE), ordered by
  *   priority: (1) due practicing cards, (2) due learned cards (capped), (3) new cards (capped).
+ *   Order within each group is stable-random (day-based seed) so decks vary without being arbitrary.
  * - **getActivePracticing**: Counts how many cards are currently in "practicing" status (used for caps).
  * - **getNextDueTimestamp**: Earliest future due time across practicing/learned cards (for UI countdown).
  *
@@ -20,6 +21,33 @@ const MAX_ACTIVE_POOL = 40
 /** Maximum new cards that can be introduced in a single session (across deck builds in that session). */
 const MAX_NEW_PER_SESSION = 10
 
+/** Returns a stable numeric hash for a string (djb2). Same input → same output. */
+function hashString(s: string): number {
+  let h = 5381
+  for (let i = 0; i < s.length; i++) {
+    h = (h * 33) ^ s.charCodeAt(i)
+  }
+  return h >>> 0
+}
+
+/** Seed for stable randomness: same calendar day → same order across deck builds. */
+function getStableSeed(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+/**
+ * Returns a copy of the array ordered by stable random order (hash of seed + key).
+ * Same seed + same items → same order; different days get different order.
+ */
+function stableShuffleBy<T>(arr: T[], seed: string, key: (item: T) => string): T[] {
+  const seedHash = hashString(seed)
+  return [...arr].sort((a, b) => {
+    const ha = hashString(seed + key(a)) ^ seedHash
+    const hb = hashString(seed + key(b)) ^ seedHash
+    return ha - hb
+  })
+}
+
 export interface BuildDeckResult {
   /** The assembled deck of cards to study (length ≤ DECK_SIZE). */
   deck: Card[]
@@ -28,34 +56,12 @@ export interface BuildDeckResult {
 }
 
 /**
- * Comparator for ordering new cards before introduction.
- * Order: level ascending (A1 before A2) → difficulty ascending (e.g. A1.1 before A1.2) → category.
- * Ensures vocabulary clusters (same level/difficulty/category) are introduced together.
- */
-const compareNewCards = (a: Card, b: Card): number => {
-  // Level ascending (A1 < A2 < B1 etc.)
-  if (a.level !== b.level) return a.level < b.level ? -1 : 1
-
-  // Difficulty ascending (A1.1 < A1.2 < A1.3)
-  const da = a.difficulty ?? ""
-  const db = b.difficulty ?? ""
-  if (da !== db) return da < db ? -1 : 1
-
-  // Category grouped
-  const ca = a.category ?? ""
-  const cb = b.category ?? ""
-  if (ca !== cb) return ca < cb ? -1 : 1
-
-  return 0
-}
-
-/**
  * Builds the next deck of cards to study from the full set and their states.
  *
  * **Priority order (each step fills the deck up to DECK_SIZE):**
  * 1. **Due practicing cards** – status "practicing" and nextDue <= now, most overdue first (smallest nextDue).
  * 2. **Due learned cards** – status "learned" and nextDue <= now, most overdue first; **capped at MAX_LEARNED_PER_DECK** so learned cards don't dominate.
- * 3. **New cards** – only if: active practicing count < MAX_ACTIVE_POOL, session new count < MAX_NEW_PER_SESSION, and there are remaining slots. New cards are sorted by compareNewCards and added up to the minimum of: remaining new allowance, remaining slots, and (MAX_ACTIVE_POOL - active practicing count).
+ * 3. **New cards** – only if: active practicing count < MAX_ACTIVE_POOL, session new count < MAX_NEW_PER_SESSION, and there are remaining slots. New cards are in stable-random order (same day → same order) and added up to the minimum of: remaining new allowance, remaining slots, and (MAX_ACTIVE_POOL - active practicing count).
  *
  * **Behavioural notes:**
  * - "Due" is evaluated once at the start (now); cards due "now" are included.
@@ -74,8 +80,9 @@ export const buildDeck = (
 ): BuildDeckResult => {
   const now = Date.now()
   const deck: Card[] = []
+  const seed = getStableSeed()
 
-  // Priority 1: due practicing cards, most overdue first
+  // Priority 1: due practicing cards, most overdue first; tie-break by stable hash
   const duePracticing = allCards
     .filter((c) => {
       const s = states[c.id]
@@ -87,7 +94,8 @@ export const buildDeck = (
       const na = states[a.id].nextDue
       const nb = states[b.id].nextDue
       if (na == null || nb == null) return 0
-      return na - nb // most overdue = smallest timestamp = first
+      if (na !== nb) return na - nb // most overdue = smallest timestamp = first
+      return hashString(seed + a.id) - hashString(seed + b.id)
     })
 
   for (const card of duePracticing) {
@@ -95,7 +103,7 @@ export const buildDeck = (
     deck.push(card)
   }
 
-  // Priority 2: due learned cards, capped at MAX_LEARNED_PER_DECK
+  // Priority 2: due learned cards, capped at MAX_LEARNED_PER_DECK; tie-break by stable hash
   const dueLearned = allCards
     .filter((c) => {
       const s = states[c.id]
@@ -105,7 +113,8 @@ export const buildDeck = (
       const na = states[a.id].nextDue
       const nb = states[b.id].nextDue
       if (na == null || nb == null) return 0
-      return na - nb
+      if (na !== nb) return na - nb
+      return hashString(seed + a.id) - hashString(seed + b.id)
     })
 
   for (const card of dueLearned) {
@@ -130,9 +139,10 @@ export const buildDeck = (
   let introducedNewCount = 0
 
   if (canIntroduceNew) {
-    const newCards = allCards
-      .filter((c) => !states[c.id] || states[c.id].status === "new")
-      .sort(compareNewCards)
+    const newCandidates = allCards.filter(
+      (c) => !states[c.id] || states[c.id].status === "new",
+    )
+    const newCards = stableShuffleBy(newCandidates, seed, (c) => c.id)
 
     const limit = Math.min(
       remainingNewAllowance,
