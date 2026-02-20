@@ -1,20 +1,38 @@
+/**
+ * Deck-building and scheduling utilities for the SRS session.
+ *
+ * Responsibilities:
+ * - **buildDeck**: Assembles the next batch of cards to study (up to DECK_SIZE), ordered by
+ *   priority: (1) due practicing cards, (2) due learned cards (capped), (3) new cards (capped).
+ * - **getActivePracticing**: Counts how many cards are currently in "practicing" status (used for caps).
+ * - **getNextDueTimestamp**: Earliest future due time across practicing/learned cards (for UI countdown).
+ *
+ * All "due" checks use current time (Date.now()); cards with nextDue <= now are considered due.
+ */
 import type { Card, CardState } from "../vocabulary/types"
 
+/** Maximum number of cards in a single deck/session. */
 const DECK_SIZE = 20
-const MAX_LEARNED_PER_DECK = 6 // 30% of 20
+/** Maximum number of "learned" cards allowed in one deck (30% of DECK_SIZE). Prevents learned cards from dominating. */
+const MAX_LEARNED_PER_DECK = 6
+/** Maximum number of cards that can be in "practicing" status at once. New cards are not introduced beyond this. */
 const MAX_ACTIVE_POOL = 40
+/** Maximum new cards that can be introduced in a single session (across deck builds in that session). */
 const MAX_NEW_PER_SESSION = 10
 
 export interface BuildDeckResult {
+  /** The assembled deck of cards to study (length ≤ DECK_SIZE). */
   deck: Card[]
+  /** Number of new cards added to the deck in this call (for session cap tracking). */
   introducedNewCount: number
 }
 
 /**
- * Order new cards by level → difficulty → category so vocabulary clusters
- * are introduced together, and lower levels come first.
+ * Comparator for ordering new cards before introduction.
+ * Order: level ascending (A1 before A2) → difficulty ascending (e.g. A1.1 before A1.2) → category.
+ * Ensures vocabulary clusters (same level/difficulty/category) are introduced together.
  */
-function compareNewCards(a: Card, b: Card): number {
+const compareNewCards = (a: Card, b: Card): number => {
   // Level ascending (A1 < A2 < B1 etc.)
   if (a.level !== b.level) return a.level < b.level ? -1 : 1
 
@@ -31,11 +49,29 @@ function compareNewCards(a: Card, b: Card): number {
   return 0
 }
 
-export function buildDeck(
+/**
+ * Builds the next deck of cards to study from the full set and their states.
+ *
+ * **Priority order (each step fills the deck up to DECK_SIZE):**
+ * 1. **Due practicing cards** – status "practicing" and nextDue <= now, most overdue first (smallest nextDue).
+ * 2. **Due learned cards** – status "learned" and nextDue <= now, most overdue first; **capped at MAX_LEARNED_PER_DECK** so learned cards don't dominate.
+ * 3. **New cards** – only if: active practicing count < MAX_ACTIVE_POOL, session new count < MAX_NEW_PER_SESSION, and there are remaining slots. New cards are sorted by compareNewCards and added up to the minimum of: remaining new allowance, remaining slots, and (MAX_ACTIVE_POOL - active practicing count).
+ *
+ * **Behavioural notes:**
+ * - "Due" is evaluated once at the start (now); cards due "now" are included.
+ * - sessionNewCardCount is the number of new cards already introduced this session; the caller must track and pass this so MAX_NEW_PER_SESSION is enforced across multiple buildDeck calls.
+ * - Cards with no state or status "new" are candidates for "new" in step 3; cards in "practicing" or "learned" are only considered in steps 1–2 when due.
+ *
+ * @param allCards - Full list of cards (e.g. for current level/set).
+ * @param states - Current state per card id; may be missing for unseen cards.
+ * @param sessionNewCardCount - Number of new cards already introduced in this session (for cap).
+ * @returns The built deck and how many new cards were introduced in this call.
+ */
+export const buildDeck = (
   allCards: Card[],
   states: Record<string, CardState>,
   sessionNewCardCount: number,
-): BuildDeckResult {
+): BuildDeckResult => {
   const now = Date.now()
   const deck: Card[] = []
 
@@ -114,15 +150,34 @@ export function buildDeck(
   return { deck, introducedNewCount }
 }
 
-/** Count cards currently in practicing status. */
-export function getActivePracticing(states: Record<string, CardState>): number {
+/**
+ * Counts how many cards currently have status "practicing".
+ *
+ * Used when building the deck to enforce MAX_ACTIVE_POOL: new cards are not
+ * introduced once this count reaches MAX_ACTIVE_POOL, so the total number of
+ * cards in the "practicing" pipeline is capped.
+ *
+ * @param states - All known card states (keyed by card id).
+ * @returns Number of cards with status "practicing".
+ */
+export const getActivePracticing = (
+  states: Record<string, CardState>,
+): number => {
   return Object.values(states).filter((s) => s.status === "practicing").length
 }
 
-/** Returns the earliest nextDue timestamp across all practicing and learned cards, or null. */
-export function getNextDueTimestamp(
+/**
+ * Returns the earliest future due timestamp among practicing and learned cards.
+ *
+ * Only considers cards that have nextDue set and nextDue > now. Used for UI
+ * (e.g. "next review in X") and does not include cards that are already due.
+ *
+ * @param states - All known card states (keyed by card id).
+ * @returns Earliest nextDue (ms) in the future, or null if none.
+ */
+export const getNextDueTimestamp = (
   states: Record<string, CardState>,
-): number | null {
+): number | null => {
   const now = Date.now()
   let earliest: number | null = null
   for (const s of Object.values(states)) {

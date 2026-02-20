@@ -1,3 +1,23 @@
+/**
+ * Main app component: SRS study session flow and UI.
+ *
+ * **Session phases**
+ * - **playing** – Showing one card at a time from the current deck; user reveals, then rates (correct/incorrect). Transitions to "deck-summary" when the last card is rated, or to "nothing-due" if the initial deck build returns empty.
+ * - **deck-summary** – Showing stats for the deck just completed (correct/incorrect). User can "Continue" (build next deck) or "Stop" (go to nothing-due).
+ * - **nothing-due** – No cards due; shows next due time and progress. Reached when buildDeck returns an empty deck (e.g. on mount or after "Continue") or when user clicks "Stop" from deck-summary.
+ *
+ * **State overview**
+ * - Card states (persisted): from useCardStates(); updated on each feedback via applyReview.
+ * - currentDeck / deckIndex / deckStats / revealed: current deck and position; reset when a new deck is started.
+ * - phase: drives which screen is shown (playing vs deck-summary vs nothing-due).
+ *
+ * **Effects**
+ * - On mount: one-time effect builds the initial deck from persisted states (startDeck(states, 0)) and sets phase to "playing" or "nothing-due".
+ * - Keyboard listener: when phase === "playing", Space reveals, 1 = correct, 2 = incorrect; listener is re-attached when phase/revealed/currentCard/handlers change.
+ *
+ * **Session new-card cap**
+ * startDeck is called with session new count 0 on mount and on "Continue", so each new deck gets a full MAX_NEW_PER_SESSION allowance. The app does not track "new cards introduced this session" across multiple decks; every deck build is effectively a fresh allowance.
+ */
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { CardView } from "./components/CardView"
 import { DeckSummary } from "./components/DeckSummary"
@@ -9,8 +29,10 @@ import { applyReview, createInitialState } from "./lib/srs"
 import { a1Cards } from "./vocabulary/a1"
 import type { Card, CardState } from "./vocabulary/types"
 
+/** Current high-level UI/session state; determines which screen is rendered. */
 type SessionPhase = "playing" | "deck-summary" | "nothing-due"
 
+/** Aggregated correct/incorrect counts for the current deck (shown on deck-summary). */
 interface DeckStats {
   correct: number
   incorrect: number
@@ -21,15 +43,19 @@ const TOTAL_CARDS = ALL_CARDS.length
 
 const App = () => {
   const { states, updateState } = useCardStates()
+  /** Whether the current card's answer is revealed (user can then give feedback). */
   const [revealed, setRevealed] = useState(false)
 
-  // Current deck
+  /** Cards in the current session deck; built by startDeck and consumed in order. */
   const [currentDeck, setCurrentDeck] = useState<Card[]>([])
+  /** Index into currentDeck; when phase is "playing", currentCard = currentDeck[deckIndex]. */
   const [deckIndex, setDeckIndex] = useState(0)
+  /** Correct/incorrect counts for the current deck; reset when startDeck runs, updated on each handleFeedback. */
   const [deckStats, setDeckStats] = useState<DeckStats>({
     correct: 0,
     incorrect: 0,
   })
+  /** Current session phase; controls which screen is shown (playing | deck-summary | nothing-due). */
   const [phase, setPhase] = useState<SessionPhase>("playing")
 
   const learnedCount = useMemo(
@@ -39,7 +65,10 @@ const App = () => {
 
   const nextDueAt = useMemo(() => getNextDueTimestamp(states), [states])
 
-  // Build a fresh deck, using the latest states ref to avoid stale closures
+  /**
+   * Builds a new deck from ALL_CARDS and current states, then sets it as the current deck and switches to "playing" (or "nothing-due" if the deck is empty).
+   * Resets deckIndex to 0, deckStats to zero, and revealed to false. Caller must pass latest states and session new count to avoid stale closures.
+   */
   const startDeck = useCallback(
     (latestStates: typeof states, latestSessionNewCount: number) => {
       const { deck, introducedNewCount } = buildDeck(
@@ -63,8 +92,10 @@ const App = () => {
     [],
   )
 
-  // Build the initial deck on mount. We need to use a ref-stable snapshot of
-  // states from the hook since states is initialised synchronously from localStorage.
+  /**
+   * Effect: run once on mount. Builds the initial deck from persisted states (startDeck(states, 0)).
+   * If the deck is empty, phase becomes "nothing-due"; otherwise "playing". Uses initialised flag so it only runs once; dependencies omitted intentionally.
+   */
   const [initialised, setInitialised] = useState(false)
   // biome-ignore lint/correctness/useExhaustiveDependencies: run once on mount to build initial deck from localStorage
   useEffect(() => {
@@ -78,6 +109,9 @@ const App = () => {
 
   const handleReveal = useCallback(() => setRevealed(true), [])
 
+  /**
+   * Applies the user's correct/incorrect rating to the current card: updates persisted state via applyReview, increments deckStats, resets revealed, then advances to next card or to "deck-summary" if this was the last card.
+   */
   const handleFeedback = useCallback(
     (correct: boolean) => {
       if (!currentCard) return
@@ -104,16 +138,23 @@ const App = () => {
     [currentCard, deckIndex, currentDeck.length, states, updateState],
   )
 
+  /**
+   * Called from deck-summary "Continue". Builds the next deck with session new count 0 (full allowance per deck); then phase becomes "playing" or "nothing-due" depending on whether the deck is empty.
+   */
   const handleContinue = useCallback(() => {
-    // Use 0 so the next deck can include new cards (up to MAX_NEW_PER_SESSION per deck).
     startDeck(states, 0)
   }, [startDeck, states])
 
+  /**
+   * Called from deck-summary "Stop". Leaves deck-summary and shows nothing-due screen (next due time, progress).
+   */
   const handleStop = useCallback(() => {
     setPhase("nothing-due")
   }, [])
 
-  // Keyboard shortcuts
+  /**
+   * Effect: keyboard shortcuts only when phase === "playing". Space = reveal; 1 = correct, 2 = incorrect (only when revealed). Prevents default for Space. Cleanup removes listener.
+   */
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.repeat) return
@@ -137,6 +178,7 @@ const App = () => {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [phase, revealed, currentCard, handleReveal, handleFeedback])
 
+  // Phase-based render: nothing-due → deck-summary → playing (with currentCard guard)
   if (phase === "nothing-due") {
     return (
       <NothingDue
