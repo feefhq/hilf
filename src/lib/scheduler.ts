@@ -6,6 +6,7 @@
  *   priority: (1) due practicing cards, (2) due learned cards (capped), (3) new cards (capped).
  *   Order within each group is stable-random (day-based seed) so decks vary without being arbitrary.
  * - **getActivePracticing**: Counts how many cards are currently in "practicing" status (used for caps).
+ * - **getTotalAvailable**: Total cards available to study now (due practicing + due learned + new available), with breakdown for future use.
  * - **getNextDueTimestamp**: Earliest future due time across practicing/learned cards (for UI countdown).
  *
  * All "due" checks use current time (Date.now()); cards with nextDue <= now are considered due.
@@ -174,6 +175,54 @@ export const getActivePracticing = (
   states: Record<string, CardState>,
 ): number => {
   return Object.values(states).filter((s) => s.status === "practicing").length
+}
+
+/** Result of getTotalAvailable; breakdown is for future use (e.g. tooltips or detailed UI). */
+export interface TotalAvailableResult {
+  total: number
+  duePracticing: number
+  dueLearned: number
+  newAvailable: number
+}
+
+/**
+ * Returns the total number of cards available to study right now, with a breakdown.
+ * Uses the same "due" and "new" rules as buildDeck; does not apply DECK_SIZE or
+ * MAX_NEW_PER_SESSION, so this is the full pool that could be studied.
+ *
+ * @param allCards - Full list of cards (e.g. for current level/set).
+ * @param states - Current state per card id; may be missing for unseen cards.
+ * @returns Total count and breakdown (duePracticing, dueLearned, newAvailable).
+ */
+export const getTotalAvailable = (
+  allCards: Card[],
+  states: Record<string, CardState>,
+): TotalAvailableResult => {
+  const now = Date.now()
+  const duePracticing = allCards.filter((c) => {
+    const s = states[c.id]
+    return (
+      s?.status === "practicing" && s.nextDue !== null && s.nextDue <= now
+    )
+  }).length
+  const dueLearned = allCards.filter((c) => {
+    const s = states[c.id]
+    return s?.status === "learned" && s.nextDue !== null && s.nextDue <= now
+  }).length
+  const activePracticingCount = getActivePracticing(states)
+  const newCandidates = allCards.filter(
+    (c) => !states[c.id] || states[c.id].status === "new",
+  )
+  const newAvailable = Math.min(
+    newCandidates.length,
+    Math.max(0, MAX_ACTIVE_POOL - activePracticingCount),
+  )
+  return {
+    total: duePracticing + dueLearned + newAvailable,
+    duePracticing,
+    dueLearned,
+    newAvailable,
+  }
 }
 
 /**
