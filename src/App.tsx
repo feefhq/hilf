@@ -178,17 +178,7 @@ const App = () => {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [phase, revealed, currentCard, handleReveal, handleFeedback])
 
-  // Phase-based render: nothing-due → deck-summary → playing (with currentCard guard)
-  if (phase === "nothing-due") {
-    return (
-      <NothingDue
-        nextDueAt={nextDueAt}
-        learnedCount={learnedCount}
-        totalCount={TOTAL_CARDS}
-      />
-    )
-  }
-
+  // Phase-based render: deck-summary → nothing-due or no card → playing
   if (phase === "deck-summary") {
     return (
       <DeckSummary
@@ -203,7 +193,7 @@ const App = () => {
     )
   }
 
-  if (!currentCard) {
+  if (phase === "nothing-due" || !currentCard) {
     return (
       <NothingDue
         nextDueAt={nextDueAt}
