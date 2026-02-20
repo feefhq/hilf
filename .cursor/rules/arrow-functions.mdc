@@ -1,0 +1,15 @@
+---
+description: Use arrow functions for all function declarations
+globs: "**/*.{ts,tsx,js,mjs}"
+alwaysApply: false
+---
+
+# Arrow functions
+
+Prefer arrow functions for all function declarations (including exported components and hooks).
+
+- Use `const fn = (...) => { ... }` or `const fn = (...) => (...)`
+- Use `export const Component = (props) => (...)` for React components
+- Use `export const useHook = () => { ... }` for hooks
+
+This is enforced by Biome: `complexity.useArrowFunction: "error"` in `biome.json`. Run `npx biome check --write` to auto-fix.

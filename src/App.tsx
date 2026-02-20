@@ -19,7 +19,7 @@ interface DeckStats {
 const ALL_CARDS: Card[] = a1Cards["a1-words"] ?? []
 const TOTAL_CARDS = ALL_CARDS.length
 
-export default function App() {
+const App = () => {
   const { states, updateState } = useCardStates()
   const [revealed, setRevealed] = useState(false)
 
@@ -221,3 +221,5 @@ export default function App() {
     </div>
   )
 }
+
+export default App

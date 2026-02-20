@@ -1,4 +1,4 @@
-function formatNextDue(timestamp: number): string {
+const formatNextDue = (timestamp: number): string => {
   const now = Date.now()
   const diffMs = timestamp - now
   const diffMins = Math.round(diffMs / (60 * 1000))
@@ -20,11 +20,11 @@ interface NothingDueProps {
   totalCount: number
 }
 
-export function NothingDue({
+export const NothingDue = ({
   nextDueAt,
   learnedCount,
   totalCount,
-}: NothingDueProps) {
+}: NothingDueProps) => {
   return (
     <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center p-4 gap-6">
       <div className="text-center max-w-sm">

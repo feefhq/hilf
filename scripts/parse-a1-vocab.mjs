@@ -14,14 +14,14 @@ const crypto = await import("node:crypto")
 const CSV_PATH = path.join(process.cwd(), "scripts", "goethe_a1_vocabulary.csv")
 
 /** Stable short ID from card content so reordering/appending doesn't break progress. */
-function stableCardId(prompt, answer, level = "A1") {
+const stableCardId = (prompt, answer, level = "A1") => {
   const payload = `${level}|${prompt}|${answer}`
   const hash = crypto.createHash("sha256").update(payload, "utf8").digest("hex")
   return `${level.toLowerCase()}-${hash.slice(0, 10)}`
 }
 
 /** Parse a single CSV line respecting quoted fields. */
-function parseCSVLine(line) {
+const parseCSVLine = (line) => {
   const out = []
   let i = 0
   while (i < line.length) {
@@ -51,7 +51,7 @@ function parseCSVLine(line) {
   return out
 }
 
-function parseCSV(text) {
+const parseCSV = (text) => {
   const lines = text.split(/\r?\n/).filter((l) => l.trim())
   if (lines.length === 0) return { header: [], rows: [] }
   const header = parseCSVLine(lines[0])
@@ -59,7 +59,7 @@ function parseCSV(text) {
   return { header, rows }
 }
 
-function rowToCard(row, _index) {
+const rowToCard = (row, _index) => {
   const [
     germanWord,
     article,
@@ -72,10 +72,9 @@ function rowToCard(row, _index) {
   const basePrompt = (englishTranslation || "").trim()
   const hasArticle = article && /^(der|die|das)$/i.test(article.trim())
   const prompt = hasArticle ? `the ${basePrompt}` : basePrompt
-  const answer =
-    article?.trim()
-      ? `${article.trim()} ${(germanWord || "").trim()}`.trim()
-      : (germanWord || "").trim()
+  const answer = article?.trim()
+    ? `${article.trim()} ${(germanWord || "").trim()}`.trim()
+    : (germanWord || "").trim()
   if (!basePrompt || !answer) return null
 
   const card = {
@@ -93,7 +92,7 @@ function rowToCard(row, _index) {
   return card
 }
 
-async function main() {
+const main = async () => {
   const text = fs.readFileSync(CSV_PATH, "utf-8")
   const { rows } = parseCSV(text)
 

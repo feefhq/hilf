@@ -7,7 +7,9 @@ interface CardViewProps {
 }
 
 /** Fallback when card has no separate example fields (e.g. legacy tab/em-dash in prompt/answer). */
-function parseParts(text: string): { primary: string; example: string | null } {
+const parseParts = (
+  text: string,
+): { primary: string; example: string | null } => {
   const sep = text.includes("\t") ? "\t" : " — "
   const idx = text.indexOf(sep)
   if (idx < 0) return { primary: text, example: null }
@@ -17,28 +19,26 @@ function parseParts(text: string): { primary: string; example: string | null } {
   }
 }
 
-function CardContent({
+const CardContent = ({
   primary,
   example,
 }: {
   primary: string
   example: string | null
-}) {
-  return (
-    <div className="text-center">
-      <p className="text-2xl md:text-3xl text-neutral-900 dark:text-neutral-100 font-medium">
-        {primary}
+}) => (
+  <div className="text-center">
+    <p className="text-2xl md:text-3xl text-neutral-900 dark:text-neutral-100 font-medium">
+      {primary}
+    </p>
+    {example && (
+      <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+        {example}
       </p>
-      {example && (
-        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-          {example}
-        </p>
-      )}
-    </div>
-  )
-}
+    )}
+  </div>
+)
 
-export function CardView({ card, revealed, onReveal }: CardViewProps) {
+export const CardView = ({ card, revealed, onReveal }: CardViewProps) => {
   const promptPrimary =
     card.promptExample != null ? card.prompt : parseParts(card.prompt).primary
   const promptExample =

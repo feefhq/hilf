@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react"
+import { useCallback, useEffect, useState } from "react"
 import type { CardState } from "../vocabulary/types"
 
 const STORAGE_KEY = "hilf-card-states-v2"
@@ -13,9 +13,9 @@ interface LegacyCardState {
   nextReview: number
 }
 
-function migrateLegacy(
+const migrateLegacy = (
   legacy: Record<string, LegacyCardState>,
-): StoredCardStates {
+): StoredCardStates => {
   const migrated: StoredCardStates = {}
   for (const [id, old] of Object.entries(legacy)) {
     migrated[id] = {
@@ -33,7 +33,7 @@ function migrateLegacy(
   return migrated
 }
 
-function load(): StoredCardStates {
+const load = (): StoredCardStates => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw) return JSON.parse(raw) as StoredCardStates
@@ -53,7 +53,7 @@ function load(): StoredCardStates {
   return {}
 }
 
-function save(data: StoredCardStates) {
+const save = (data: StoredCardStates) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
   } catch (e) {
@@ -61,7 +61,7 @@ function save(data: StoredCardStates) {
   }
 }
 
-export function useCardStates() {
+export const useCardStates = () => {
   const [states, setStates] = useState<StoredCardStates>(load)
 
   useEffect(() => {

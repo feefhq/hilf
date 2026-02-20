@@ -10,7 +10,7 @@ const MS_PER_INTERVAL =
 const LEARNED_INTERVAL = 3
 const MIN_EASE = 1.3
 
-export function applyReview(state: CardState, correct: boolean): CardState {
+export const applyReview = (state: CardState, correct: boolean): CardState => {
   const now = Date.now()
   let {
     repetitions,
@@ -73,16 +73,14 @@ export function applyReview(state: CardState, correct: boolean): CardState {
   }
 }
 
-export function createInitialState(): CardState {
-  return {
-    status: "practicing",
-    interval: 0,
-    easeFactor: 2.5,
-    repetitions: 0,
-    lastReviewed: null,
-    nextDue: null,
-    correctStreak: 0,
-    totalCorrect: 0,
-    totalSeen: 0,
-  }
-}
+export const createInitialState = (): CardState => ({
+  status: "practicing",
+  interval: 0,
+  easeFactor: 2.5,
+  repetitions: 0,
+  lastReviewed: null,
+  nextDue: null,
+  correctStreak: 0,
+  totalCorrect: 0,
+  totalSeen: 0,
+})
