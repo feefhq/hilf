@@ -64,10 +64,11 @@ export const CardView = ({ card, revealed, onReveal }: CardViewProps) => {
         <button
           type="button"
           onClick={onReveal}
+          aria-keyshortcuts="Space"
           className="mt-2 px-5 py-2.5 rounded-lg bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-300 dark:hover:bg-neutral-500 text-neutral-800 dark:text-neutral-200 font-medium transition-colors inline-flex items-center gap-2"
         >
           Reveal translation
-          <kbd className="ml-1.5 px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-200/80 dark:bg-neutral-600/50 border border-neutral-300/80 dark:border-neutral-500/50 text-neutral-500 dark:text-neutral-400">
+          <kbd className="ml-1.5 px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-200/80 dark:bg-neutral-600/50 border border-neutral-300/80 dark:border-neutral-500/50 text-neutral-500 dark:text-neutral-400 kbd-pointer-only">
             ⌴
           </kbd>
         </button>

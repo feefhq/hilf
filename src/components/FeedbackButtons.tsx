@@ -12,18 +12,20 @@ export const FeedbackButtons = ({ onFeedback }: FeedbackButtonsProps) => (
     <button
       type="button"
       onClick={() => onFeedback(5)}
+      aria-keyshortcuts="1"
       className="px-6 py-3 rounded-2xl shadow-sm bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-medium transition-colors inline-flex items-center hover:bg-emerald-500/15 dark:hover:bg-emerald-500/25"
     >
       Correct
-      <kbd className={kbdClass}>1</kbd>
+      <kbd className={`${kbdClass} kbd-pointer-only`}>1</kbd>
     </button>
     <button
       type="button"
       onClick={() => onFeedback(2)}
+      aria-keyshortcuts="2"
       className="px-6 py-3 rounded-2xl shadow-sm bg-red-400/10 dark:bg-red-400/15 text-red-500 dark:text-red-400 font-medium transition-colors inline-flex items-center hover:bg-red-400/15 dark:hover:bg-red-400/25"
     >
       Incorrect
-      <kbd className={kbdClass}>2</kbd>
+      <kbd className={`${kbdClass} kbd-pointer-only`}>2</kbd>
     </button>
   </div>
 )
