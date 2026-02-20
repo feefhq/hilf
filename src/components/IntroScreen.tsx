@@ -8,7 +8,7 @@ export const IntroScreen = ({ onGetStarted }: IntroScreenProps) => {
       <div className="text-center max-w-sm space-y-4">
         <div className="space-y-1">
           <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200">
-            Welcome to hilf
+            Welcome to <span className="wordmark">hilf</span>
           </h2>
           <p className="text-base font-medium text-neutral-500 dark:text-neutral-400">
             German vocabulary with spaced repetition
@@ -16,7 +16,7 @@ export const IntroScreen = ({ onGetStarted }: IntroScreenProps) => {
         </div>
         <hr className="border-0 border-t border-neutral-200 dark:border-neutral-700" />
         <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-          hilf is a small flashcard app that helps you learn German words with
+          <span className="wordmark">hilf</span> is a small flashcard app that helps you learn German words with
           spaced repetition. You’ll see a card, reveal the answer, then rate
           whether you got it right—the app schedules when you’ll see it again.
         </p>

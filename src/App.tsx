@@ -221,7 +221,7 @@ const App = () => {
     <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900 flex flex-col">
       <header className="p-4 border-b border-neutral-200 dark:border-neutral-700">
         <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200">
-          hilf
+          <span className="wordmark">hilf</span>
         </h1>
       </header>
 
