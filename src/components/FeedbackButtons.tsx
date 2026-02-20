@@ -12,7 +12,7 @@ export const FeedbackButtons = ({ onFeedback }: FeedbackButtonsProps) => (
     <button
       type="button"
       onClick={() => onFeedback(5)}
-      className="px-6 py-3 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 font-medium transition-colors inline-flex items-center"
+      className="px-6 py-3 rounded-2xl shadow-sm bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-medium transition-colors inline-flex items-center hover:bg-emerald-500/15 dark:hover:bg-emerald-500/25"
     >
       Correct
       <kbd className={kbdClass}>1</kbd>
@@ -20,7 +20,7 @@ export const FeedbackButtons = ({ onFeedback }: FeedbackButtonsProps) => (
     <button
       type="button"
       onClick={() => onFeedback(2)}
-      className="px-6 py-3 rounded-xl bg-red-100 dark:bg-red-900/40 hover:bg-red-200 dark:hover:bg-red-900/60 text-red-800 dark:text-red-200 font-medium transition-colors inline-flex items-center"
+      className="px-6 py-3 rounded-2xl shadow-sm bg-red-400/10 dark:bg-red-400/15 text-red-500 dark:text-red-400 font-medium transition-colors inline-flex items-center hover:bg-red-400/15 dark:hover:bg-red-400/25"
     >
       Incorrect
       <kbd className={kbdClass}>2</kbd>
